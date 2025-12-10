@@ -185,7 +185,7 @@ export default function HeroSection() {
                                         src="/light-hero-image.png"
                                         alt="app screen"
                                         width="2700"
-                                        height="1440"
+                                        height="1440" 
                                     />
                                 </div>
                             </div>
