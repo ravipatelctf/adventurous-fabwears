@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 import { ArrowRight, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
-import { HeroHeader } from './header'
 import { AnimatedGroup } from '@workspace/ui/components/animated-group'
 import { TextEffect } from '@workspace/ui/components/text-effect'
 import { Button } from '@workspace/ui/components/button'
@@ -30,7 +29,6 @@ const transitionVariants = {
 export default function HeroSection() {
     return (
         <>
-            <HeroHeader />
             <main className="overflow-hidden">
                 <div
                     aria-hidden

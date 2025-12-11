@@ -14,6 +14,13 @@ const fontMono = Geist_Mono({
   variable: "--font-mono",
 })
 
+export const metadata = {
+  icons: {
+    icon: "/favicon.jpeg",
+  },
+};
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,8 +35,7 @@ export default function RootLayout({
           <div className="fixed top-4 right-4 z-[999]">
             <ModeToggle />
           </div>
-          {children}
-
+            {children}
         </Providers>
       </body>
     </html>
