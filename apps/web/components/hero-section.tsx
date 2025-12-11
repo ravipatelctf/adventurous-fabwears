@@ -175,14 +175,14 @@ export default function HeroSection() {
                                 <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
                                     <Image
                                         className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
-                                        src="/dark-hero-image.png"
+                                        src="/adventurous-fabwears-collage.png"
                                         alt="app screen"
                                         width="2700"
                                         height="1440"
                                     />
                                     <Image
                                         className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border dark:hidden"
-                                        src="/light-hero-image.png"
+                                        src="/adventurous-fabwears-collage.png"
                                         alt="app screen"
                                         width="2700"
                                         height="1440" 
@@ -206,75 +206,75 @@ export default function HeroSection() {
                         <div className="group-hover:blur-xs mx-auto mt-12 grid max-w-2xl grid-cols-4 gap-x-12 gap-y-8 transition-all duration-500 group-hover:opacity-50 sm:gap-x-16 sm:gap-y-14">
                             <div className="flex">
                                 <img
-                                    className="mx-auto h-5 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/nvidia.svg"
-                                    alt="Nvidia Logo"
-                                    height="20"
+                                    className="mx-auto h-15 w-fit"
+                                    src="https://cdn.brandfetch.io/www.lycra.com?c=1id0prbph0q_bx0iJsm"
+                                    alt="Lycra Logo"
+                                    height="15"
                                     width="auto"
                                 />
                             </div>
 
                             <div className="flex">
                                 <img
-                                    className="mx-auto h-4 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/column.svg"
-                                    alt="Column Logo"
-                                    height="16"
+                                    className="mx-auto h-15 w-fit"
+                                    src="https://cdn.brandfetch.io/www.directalpine.com?c=1id0prbph0q_bx0iJsm"
+                                    alt="Direct Alpine Logo"
+                                    height="15"
                                     width="auto"
                                 />
                             </div>
                             <div className="flex">
                                 <img
-                                    className="mx-auto h-4 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/github.svg"
-                                    alt="GitHub Logo"
-                                    height="16"
+                                    className="mx-auto h-15 w-fit"
+                                    src="https://cdn.brandfetch.io/vuoriclothing.com?c=1id0prbph0q_bx0iJsm"
+                                    alt="Vuori Clothing Logo"
+                                    height="15"
                                     width="auto"
                                 />
                             </div>
                             <div className="flex">
                                 <img
-                                    className="mx-auto h-5 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/nike.svg"
-                                    alt="Nike Logo"
-                                    height="20"
+                                    className="mx-auto h-15 w-fit"
+                                    src="https://cdn.brandfetch.io/gobik.com?c=1id0prbph0q_bx0iJsm"
+                                    alt="Gobik Logo"
+                                    height="15"
                                     width="auto"
                                 />
                             </div>
                             <div className="flex">
                                 <img
-                                    className="mx-auto h-5 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
-                                    alt="Lemon Squeezy Logo"
-                                    height="20"
+                                    className="mx-auto h-15 w-fit"
+                                    src="https://cdn.brandfetch.io/indyeva.com?c=1id0prbph0q_bx0iJsm"
+                                    alt="indyeva Logo"
+                                    height="15"
                                     width="auto"
                                 />
                             </div>
                             <div className="flex">
                                 <img
-                                    className="mx-auto h-4 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/laravel.svg"
-                                    alt="Laravel Logo"
-                                    height="16"
+                                    className="mx-auto h-17 w-fit"
+                                    src="https://cdn.brandfetch.io/forloh.com?c=1id0prbph0q_bx0iJsm"
+                                    alt="forloh Logo"
+                                    height="15"
                                     width="auto"
                                 />
                             </div>
                             <div className="flex">
                                 <img
-                                    className="mx-auto h-7 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/lilly.svg"
-                                    alt="Lilly Logo"
-                                    height="28"
+                                    className="mx-auto h-17 w-fit"
+                                    src="https://cdn.brandfetch.io/www.thrudark.com?c=1id0prbph0q_bx0iJsm"
+                                    alt="thrudark Logo"
+                                    height="15"
                                     width="auto"
                                 />
                             </div>
 
                             <div className="flex">
                                 <img
-                                    className="mx-auto h-6 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/openai.svg"
-                                    alt="OpenAI Logo"
-                                    height="24"
+                                    className="mx-auto h-15 w-fit"
+                                    src="https://cdn.brandfetch.io/www.aritzia.com?c=1id0prbph0q_bx0iJsm"
+                                    alt="aritzia Logo"
+                                    height="15"
                                     width="auto"
                                 />
                             </div>
