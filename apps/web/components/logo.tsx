@@ -10,7 +10,7 @@ export const Logo = ({ className }: { className?: string }) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Slash (Golden) */}
+        {/* Slash (Golden Accent) */}
         <line
           x1="5"
           y1="28"
@@ -21,26 +21,22 @@ export const Logo = ({ className }: { className?: string }) => {
           strokeLinecap="round"
         />
 
-        {/*
-          Triangle A — stroke is:
-          • black in light mode
-          • white in dark mode
-        */}
+        {/* Triangle A (Always Black in Light Mode) */}
         <path
           d="M17 26 L27 6 L37 26"
-          className="stroke-black dark:stroke-white"
+          stroke="black"
           strokeWidth="3"
           strokeLinecap="round"
           fill="none"
         />
 
-        {/* Bottom bar with center gap */}
+        {/* Bottom bar with center gap (Black for Light Mode) */}
         <line
           x1="19"
           y1="26"
           x2="24"
           y2="26"
-          className="stroke-black dark:stroke-white"
+          stroke="black"
           strokeWidth="3"
           strokeLinecap="round"
         />
@@ -49,7 +45,7 @@ export const Logo = ({ className }: { className?: string }) => {
           y1="26"
           x2="35"
           y2="26"
-          className="stroke-black dark:stroke-white"
+          stroke="black"
           strokeWidth="3"
           strokeLinecap="round"
         />

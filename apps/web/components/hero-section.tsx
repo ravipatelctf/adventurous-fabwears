@@ -25,7 +25,7 @@ export default function HeroSection() {
                                         asChild
                                         size="lg"
                                         className="px-5 text-base">
-                                        <Link href="#link">
+                                        <Link href="#products">
                                             <span className="text-nowrap">Explore Fabrics</span>
                                         </Link>
                                     </Button>
@@ -35,7 +35,7 @@ export default function HeroSection() {
                                         size="lg"
                                         variant="ghost"
                                         className="px-5 text-base">
-                                        <Link href="#link">
+                                        <Link target="_blank" href="https://wa.me/919988940158">
                                             <span className="text-nowrap">Get Best Quote</span>
                                         </Link>
                                     </Button>
