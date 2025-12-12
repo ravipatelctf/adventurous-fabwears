@@ -1,279 +1,157 @@
 import React from 'react'
 import Link from 'next/link'
-import { ArrowRight, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
-import { AnimatedGroup } from '@workspace/ui/components/animated-group'
-import { TextEffect } from '@workspace/ui/components/text-effect'
+import { HeroHeader } from './header'
 import { Button } from '@workspace/ui/components/button'
+import { InfiniteSlider } from '@workspace/ui/components/infinite-slider'
+import { ProgressiveBlur } from '@workspace/ui/components/progressive-blur'
 
-const transitionVariants = {
-    item: {
-        hidden: {
-            opacity: 0,
-            filter: 'blur(12px)',
-            y: 12,
-        },
-        visible: {
-            opacity: 1,
-            filter: 'blur(0px)',
-            y: 0,
-            transition: {
-                type: 'spring' as const,
-                bounce: 0.3,
-                duration: 1.5,
-            },
-        },
-    },
-}
 
 export default function HeroSection() {
     return (
         <>
-            <main className="overflow-hidden">
-                <div
-                    aria-hidden
-                    className="absolute inset-0 isolate hidden opacity-65 contain-strict lg:block">
-                    <div className="w-140 h-320 -translate-y-87.5 absolute left-0 top-0 -rotate-45 rounded-full bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,hsla(0,0%,85%,.08)_0,hsla(0,0%,55%,.02)_50%,hsla(0,0%,45%,0)_80%)]" />
-                    <div className="h-320 absolute left-0 top-0 w-60 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.06)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]" />
-                    <div className="h-320 -translate-y-87.5 absolute left-0 top-0 w-60 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]" />
-                </div>
+            <HeroHeader />
+            <main className="overflow-x-hidden">
                 <section>
-                    <div className="relative pt-24 md:pt-36">
-                        <AnimatedGroup
-                            variants={{
-                                container: {
-                                    visible: {
-                                        transition: {
-                                            delayChildren: 1,
-                                        },
-                                    },
-                                },
-                                item: {
-                                    hidden: {
-                                        opacity: 0,
-                                        y: 20,
-                                    },
-                                    visible: {
-                                        opacity: 1,
-                                        y: 0,
-                                        transition: {
-                                            type: 'spring',
-                                            bounce: 0.3,
-                                            duration: 2,
-                                        },
-                                    },
-                                },
-                            }}
-                            className="mask-b-from-35% mask-b-to-90% absolute inset-0 top-56 -z-20 lg:top-32">
-                            <Image
-                                src="https://ik.imagekit.io/lrigu76hy/tailark/night-background.jpg?updatedAt=1745733451120"
-                                alt="background"
-                                className="hidden size-full dark:block"
-                                width="3276"
-                                height="4095"
-                            />
-                        </AnimatedGroup>
-
-                        <div
-                            aria-hidden
-                            className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"
-                        />
-
-                        <div className="mx-auto max-w-7xl px-6">
-                            <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
-                                <AnimatedGroup variants={transitionVariants}>
-                                    <Link
-                                        href="#link"
-                                        className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950">
-                                        <span className="text-foreground text-sm">India's Trusted Exporter of Premium Activewear Fabrics</span>
-                                        <span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
-
-                                        <div className="bg-background group-hover:bg-muted size-6 overflow-hidden rounded-full duration-500">
-                                            <div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
-                                                <span className="flex size-6">
-                                                    <ArrowRight className="m-auto size-3" />
-                                                </span>
-                                                <span className="flex size-6">
-                                                    <ArrowRight className="m-auto size-3" />
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </Link>
-                                </AnimatedGroup>
-
-                                <TextEffect
-                                    preset="fade-in-blur"
-                                    speedSegment={0.3}
-                                    as="h1"
-                                    className="mx-auto mt-8 max-w-4xl text-balance text-5xl max-md:font-semibold md:text-7xl lg:mt-16 xl:text-[5.25rem]">
-                                    Premium Fabrics for Global Brands
-                                </TextEffect>
-                                <TextEffect
-                                    per="line"
-                                    preset="fade-in-blur"
-                                    speedSegment={0.3}
-                                    delay={0.5}
-                                    as="p"
-                                    className="mx-auto mt-8 max-w-2xl text-balance text-lg">
-                                    Supplying premium Lycra, four-way stretch, dry-fit, and advanced performance fabrics to global manufacturers, wholesalers, and fast-growing apparel brands.
-                                </TextEffect>
-
-                                <AnimatedGroup
-                                    variants={{
-                                        container: {
-                                            visible: {
-                                                transition: {
-                                                    staggerChildren: 0.05,
-                                                    delayChildren: 0.75,
-                                                },
-                                            },
-                                        },
-                                        ...transitionVariants,
-                                    }}
-                                    className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row">
-                                    <div
-                                        key={1}
-                                        className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5">
-                                        <Button
-                                            asChild
-                                            size="lg"
-                                            className="rounded-xl px-5 text-base">
-                                            <Link href="#link">
-                                                <span className="text-nowrap">Explore Fabrics</span>
-                                            </Link>
-                                        </Button>
-                                    </div>
+                    <div className="pb-24 pt-12 md:pb-32 lg:pb-56 lg:pt-26">
+                        <div className="relative mx-auto flex max-w-6xl flex-col px-6 lg:block">
+                            <div className="mx-auto max-w-lg text-center lg:ml-0 lg:w-1/2 lg:text-left">
+                                <h1 className="mt-8 max-w-2xl text-balance text-3xl font-medium md:text-4xl lg:mt-16 xl:text-5xl">Leaders in Fabrics with Lycra<sup>®</sup> Fiber</h1>
+                                <p className="mt-8 max-w-2xl text-pretty text-lg">
+                                Premium Lycra® and performance-driven activewear fabrics trusted by global brands for sportswear, athleisure, and high-stretch apparel.
+                                </p>
+                                <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
+                                    <Button
+                                        asChild
+                                        size="lg"
+                                        className="px-5 text-base">
+                                        <Link href="#link">
+                                            <span className="text-nowrap">Explore Fabrics</span>
+                                        </Link>
+                                    </Button>
                                     <Button
                                         key={2}
                                         asChild
                                         size="lg"
                                         variant="ghost"
-                                        className="h-10.5 rounded-xl px-5">
+                                        className="px-5 text-base">
                                         <Link href="#link">
-                                            <span className="text-nowrap">Request a Quote</span>
+                                            <span className="text-nowrap">Get Best Quote</span>
                                         </Link>
                                     </Button>
-                                </AnimatedGroup>
-                            </div>
-                        </div>
-
-                        <AnimatedGroup
-                            variants={{
-                                container: {
-                                    visible: {
-                                        transition: {
-                                            staggerChildren: 0.05,
-                                            delayChildren: 0.75,
-                                        },
-                                    },
-                                },
-                                ...transitionVariants,
-                            }}>
-                            <div className="mask-b-from-55% relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
-                                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
-                                    <Image
-                                        className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
-                                        src="/adventurous-fabwears-collage.png"
-                                        alt="app screen"
-                                        width="2700"
-                                        height="1440"
-                                    />
-                                    <Image
-                                        className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border dark:hidden"
-                                        src="/adventurous-fabwears-collage.png"
-                                        alt="app screen"
-                                        width="2700"
-                                        height="1440" 
-                                    />
                                 </div>
                             </div>
-                        </AnimatedGroup>
+                                <div className="mt-10 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 flex justify-center items-center">
+                                    <Image
+                                        src="/hero-image.jpeg"
+                                        alt="Abstract Object"
+                                        width={2000}
+                                        height={2000}
+                                        className="w-full max-w-3xl object-contain"
+                                        priority
+                                    />
+                                </div>
+                        </div>
                     </div>
                 </section>
-                <section className="bg-background pb-16 pt-16 md:pb-32">
-                    <div className="group relative m-auto max-w-5xl px-6">
-                        <div className="absolute inset-0 z-10 flex scale-95 items-center justify-center opacity-0 duration-500 group-hover:scale-100 group-hover:opacity-100">
-                            <Link
-                                href="/"
-                                className="block text-sm duration-150 hover:opacity-75">
-                                <span> Meet Our Customers</span>
+                <section className="bg-background pb-16 md:pb-32">
+                    <div className="group relative m-auto max-w-6xl px-6">
+                        <div className="flex flex-col items-center md:flex-row">
+                            <div className="md:max-w-44 md:border-r md:pr-6">
+                                <p className="text-end text-sm">We work with the best brands</p>
+                            </div>
+                            <div className="relative py-6 md:w-[calc(100%-11rem)]">
+                                <InfiniteSlider
+                                    speedOnHover={20}
+                                    speed={40}
+                                    gap={112}>
+                                    <div className="flex">
+                                        <img
+                                            className="mx-auto h-15 w-fit"
+                                            src="https://cdn.brandfetch.io/lycra.com?c=1id0prbph0q_bx0iJsm"
+                                            alt="Lycra Logo"
+                                            height="20"
+                                            width="auto"
+                                        />
+                                    </div>
 
-                                <ChevronRight className="ml-1 inline-block size-3" />
-                            </Link>
-                        </div>
-                        <div className="group-hover:blur-xs mx-auto mt-12 grid max-w-2xl grid-cols-4 gap-x-12 gap-y-8 transition-all duration-500 group-hover:opacity-50 sm:gap-x-16 sm:gap-y-14">
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-15 w-fit"
-                                    src="https://cdn.brandfetch.io/www.lycra.com?c=1id0prbph0q_bx0iJsm"
-                                    alt="Lycra Logo"
-                                    height="15"
-                                    width="auto"
-                                />
-                            </div>
+                                    <div className="flex">
+                                        <img
+                                            className="mx-auto h-14 w-fit"
+                                            src="https://cdn.brandfetch.io/www.directalpine.com?c=1id0prbph0q_bx0iJsm"
+                                            alt="Direct Alpine Logo"
+                                            height="16"
+                                            width="auto"
+                                        />
+                                    </div>
+                                    <div className="flex">
+                                        <img
+                                            className="mx-auto h-14 w-fit"
+                                            src="https://cdn.brandfetch.io/vuoriclothing.com?c=1id0prbph0q_bx0iJsm"
+                                            alt="Vuori Clothing Logo"
+                                            height="16"
+                                            width="auto"
+                                        />
+                                    </div>
+                                    <div className="flex">
+                                        <img
+                                            className="mx-auto h-15 w-fit"
+                                            src="https://cdn.brandfetch.io/www.thrudark.com?c=1id0prbph0q_bx0iJsm"
+                                            alt="Thrudark Logo"
+                                            height="20"
+                                            width="auto"
+                                        />
+                                    </div>
+                                    <div className="flex">
+                                        <img
+                                            className="mx-auto h-15 w-fit"
+                                            src="https://cdn.brandfetch.io/www.aritzia.com?c=1id0prbph0q_bx0iJsm"
+                                            alt="Aritzia Logo"
+                                            height="20"
+                                            width="auto"
+                                        />
+                                    </div>
+                                    <div className="flex">
+                                        <img
+                                            className="mx-auto h-14 w-fit"
+                                            src="https://cdn.brandfetch.io/satisfyrunning.com?c=1id0prbph0q_bx0iJsm"
+                                            alt="Satisfy Running Logo"
+                                            height="16"
+                                            width="auto"
+                                        />
+                                    </div>
+                                    <div className="flex">
+                                        <img
+                                            className="mx-auto h-17 w-fit"
+                                            src="https://cdn.brandfetch.io/obermeyer.com?c=1id0prbph0q_bx0iJsm"
+                                            alt="Obermeyer Logo"
+                                            height="28"
+                                            width="auto"
+                                        />
+                                    </div>
 
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-15 w-fit"
-                                    src="https://cdn.brandfetch.io/www.directalpine.com?c=1id0prbph0q_bx0iJsm"
-                                    alt="Direct Alpine Logo"
-                                    height="15"
-                                    width="auto"
-                                />
-                            </div>
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-15 w-fit"
-                                    src="https://cdn.brandfetch.io/vuoriclothing.com?c=1id0prbph0q_bx0iJsm"
-                                    alt="Vuori Clothing Logo"
-                                    height="15"
-                                    width="auto"
-                                />
-                            </div>
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-15 w-fit"
-                                    src="https://cdn.brandfetch.io/gobik.com?c=1id0prbph0q_bx0iJsm"
-                                    alt="Gobik Logo"
-                                    height="15"
-                                    width="auto"
-                                />
-                            </div>
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-15 w-fit"
-                                    src="https://cdn.brandfetch.io/indyeva.com?c=1id0prbph0q_bx0iJsm"
-                                    alt="indyeva Logo"
-                                    height="15"
-                                    width="auto"
-                                />
-                            </div>
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-17 w-fit"
-                                    src="https://cdn.brandfetch.io/forloh.com?c=1id0prbph0q_bx0iJsm"
-                                    alt="forloh Logo"
-                                    height="15"
-                                    width="auto"
-                                />
-                            </div>
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-17 w-fit"
-                                    src="https://cdn.brandfetch.io/www.thrudark.com?c=1id0prbph0q_bx0iJsm"
-                                    alt="thrudark Logo"
-                                    height="15"
-                                    width="auto"
-                                />
-                            </div>
+                                    <div className="flex">
+                                        <img
+                                            className="mx-auto h-16 w-fit"
+                                            src="https://cdn.brandfetch.io/forloh.com?c=1id0prbph0q_bx0iJsm"
+                                            alt="Forloh Logo"
+                                            height="24"
+                                            width="auto"
+                                        />
+                                    </div>
+                                </InfiniteSlider>
 
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-15 w-fit"
-                                    src="https://cdn.brandfetch.io/www.aritzia.com?c=1id0prbph0q_bx0iJsm"
-                                    alt="aritzia Logo"
-                                    height="15"
-                                    width="auto"
+                                <div className="bg-linear-to-r from-background absolute inset-y-0 left-0 w-20"></div>
+                                <div className="bg-linear-to-l from-background absolute inset-y-0 right-0 w-20"></div>
+                                <ProgressiveBlur
+                                    className="pointer-events-none absolute left-0 top-0 h-full w-20"
+                                    direction="left"
+                                    blurIntensity={1}
+                                />
+                                <ProgressiveBlur
+                                    className="pointer-events-none absolute right-0 top-0 h-full w-20"
+                                    direction="right"
+                                    blurIntensity={1}
                                 />
                             </div>
                         </div>
