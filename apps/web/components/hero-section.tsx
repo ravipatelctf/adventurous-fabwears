@@ -86,6 +86,13 @@ export default function HeroSection() {
                       />
                     </div>
                   ))}
+                    <div className="">
+                      <img
+                        className="mx-auto h-14 w-fit"
+                        src={`/athelete-sportswear-logo.avif`}
+                        alt={`Athletic Sportswear`}
+                      />
+                    </div>                  
                 </InfiniteSlider>
 
                 <div className="absolute inset-y-0 left-0 w-20 bg-linear-to-r from-background" />
