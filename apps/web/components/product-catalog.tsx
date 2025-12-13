@@ -13,6 +13,7 @@ import {
 
 import { Card, CardContent, CardHeader, CardTitle } from "@workspace/ui/components/card"
 import { Button } from "@workspace/ui/components/button"
+import { getProductWhatsAppLink } from "@/lib/whatsapp"
 
 const products = [
   { name: "NS Lycra Fabric", image: "/product-images/ns-lycra-fabric/ns-lycra-fabric-500x500.webp", slug: "ns-lycra-fabric" },
@@ -63,8 +64,8 @@ export default function ProductCatalog() {
                         src={product.image}
                         alt={product.name}
                         width={400}
-                        height={300}
-                        className="rounded-lg object-cover w-full h-40"
+                        height={400}
+                        className="rounded-lg object-cover w-full h-full"
                       />
 
                       {/* <Button asChild className="mt-auto w-full">
@@ -73,7 +74,7 @@ export default function ProductCatalog() {
                         </Link>
                       </Button> */}
                       <Button asChild className="w-full">
-                          <Link href="https://wa.me/919988940158" target="_blank">
+                          <Link target="_blank" href={getProductWhatsAppLink(product)}>
                               Request Best Quote
                           </Link>
                       </Button>

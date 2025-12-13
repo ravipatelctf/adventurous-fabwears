@@ -35,22 +35,30 @@ export default function HeroSection() {
                                         size="lg"
                                         variant="ghost"
                                         className="px-5 text-base">
-                                        <Link target="_blank" href="https://wa.me/919988940158">
+                                        <Link target="_blank" href="https://wa.me/919988940158?text=Hello%20Adventurous%20Fabwears%20Team%2C%0A%0AI%20am%20interested%20in%20your%20Lycra%C2%AE%2C%20sportswear%2C%20and%20activewear%20fabric%20range.%0APlease%20share%20your%20latest%20fabric%20catalog%2C%20specifications%2C%20MOQ%2C%20and%20pricing%20details.%0A%0ALooking%20forward%20to%20your%20response.%0AThank%20you.">
                                             <span className="text-nowrap">Get Best Quote</span>
                                         </Link>
                                     </Button>
                                 </div>
                             </div>
-                                <div className="mt-10 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 flex justify-center items-center">
-                                    <Image
-                                        src="/hero-image.jpeg"
-                                        alt="Abstract Object"
-                                        width={2000}
-                                        height={2000}
-                                        className="w-full max-w-3xl object-contain"
-                                        priority
+                            <div className="mt-10 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 flex items-center justify-center">
+                                <div className="relative w-full max-w-3xl rounded-xl overflow-hidden shadow-lg border">
+
+                                    {/* 16:9 Aspect Ratio */}
+                                    <div className="relative w-full pt-[56.25%]">
+                                    <video
+                                        src="/videos/hero-video-1.mp4"
+                                        autoPlay
+                                        muted
+                                        loop
+                                        playsInline
+                                        preload="metadata"
+                                        className="absolute inset-0 w-full h-full object-cover"
                                     />
+                                    </div>
+
                                 </div>
+                            </div>
                         </div>
                     </div>
                 </section>
