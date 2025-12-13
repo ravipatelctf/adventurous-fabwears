@@ -1,171 +1,111 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { HeroHeader } from './header'
 import { Button } from '@workspace/ui/components/button'
 import { InfiniteSlider } from '@workspace/ui/components/infinite-slider'
 import { ProgressiveBlur } from '@workspace/ui/components/progressive-blur'
 
-
 export default function HeroSection() {
-    return (
-        <>
-            <HeroHeader />
-            <main className="overflow-x-hidden">
-                <section>
-                    <div className="pb-24 pt-12 md:pb-32 lg:pb-56 lg:pt-26">
-                        <div className="relative mx-auto flex max-w-6xl flex-col px-6 lg:block">
-                            <div className="mx-auto max-w-lg text-center lg:ml-0 lg:w-1/2 lg:text-left">
-                                <h1 className="mt-8 max-w-2xl text-balance text-3xl font-medium md:text-4xl lg:mt-16 xl:text-5xl">Leaders in Fabrics with Lycra<sup>®</sup> Fiber</h1>
-                                <p className="mt-8 max-w-2xl text-pretty text-lg">
-                                Premium Lycra® and performance-driven activewear fabrics trusted by global brands for sportswear, athleisure, and high-stretch apparel.
-                                </p>
-                                <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
-                                    <Button
-                                        asChild
-                                        size="lg"
-                                        className="px-5 text-base">
-                                        <Link href="#products">
-                                            <span className="text-nowrap">Explore Fabrics</span>
-                                        </Link>
-                                    </Button>
-                                    <Button
-                                        key={2}
-                                        asChild
-                                        size="lg"
-                                        variant="ghost"
-                                        className="px-5 text-base">
-                                        <Link target="_blank" href="https://wa.me/919988940158?text=Hello%20Adventurous%20Fabwears%20Team%2C%0A%0AI%20am%20interested%20in%20your%20Lycra%C2%AE%2C%20sportswear%2C%20and%20activewear%20fabric%20range.%0APlease%20share%20your%20latest%20fabric%20catalog%2C%20specifications%2C%20MOQ%2C%20and%20pricing%20details.%0A%0ALooking%20forward%20to%20your%20response.%0AThank%20you.">
-                                            <span className="text-nowrap">Get Best Quote</span>
-                                        </Link>
-                                    </Button>
-                                </div>
-                            </div>
-                            <div className="mt-10 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 flex items-center justify-center">
-                                <div className="relative w-full max-w-3xl rounded-xl overflow-hidden shadow-lg border">
+  return (
+    <>
+      <HeroHeader />
 
-                                    {/* 16:9 Aspect Ratio */}
-                                    <div className="relative w-full pt-[56.25%]">
-                                    <video
-                                        src="/videos/hero-video-1.mp4"
-                                        autoPlay
-                                        muted
-                                        loop
-                                        playsInline
-                                        preload="metadata"
-                                        className="absolute inset-0 w-full h-full object-cover"
-                                    />
-                                    </div>
+      <main className="overflow-x-hidden">
+        {/* HERO SECTION */}
+        <section className="relative min-h-[90vh] lg:min-h-[100vh]">
 
-                                </div>
-                            </div>
-                        </div>
+          {/* Background Video */}
+          <video
+            src="/videos/hero-video-1.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/55" />
+
+          {/* Hero Content */}
+          <div className="relative z-10 mx-auto max-w-6xl px-6 pt-28 pb-24 md:pt-36 lg:pt-44">
+            <div className="max-w-2xl text-center lg:text-left">
+              <h1 className="text-balance text-3xl font-medium text-white md:text-4xl xl:text-5xl">
+                Leaders in Fabrics with Lycra<sup>®</sup> Fiber
+              </h1>
+
+              <p className="mt-6 max-w-xl text-lg text-white/90">
+                Premium Lycra® and performance-driven activewear fabrics trusted
+                by global brands for sportswear, athleisure, and high-stretch apparel.
+              </p>
+
+              <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row lg:justify-start">
+                <Button asChild size="lg" className="px-6">
+                  <Link href="#products">Explore Fabrics</Link>
+                </Button>
+
+                <Button asChild size="lg" variant="ghost" className="px-6 text-white">
+                  <Link
+                    target="_blank"
+                    href="https://wa.me/919988940158?text=Hello%20Adventurous%20Fabwears%20Team%2C%0A%0AI%20am%20interested%20in%20your%20Lycra%C2%AE%2C%20sportswear%2C%20and%20activewear%20fabric%20range.%0APlease%20share%20your%20latest%20fabric%20catalog%2C%20specifications%2C%20MOQ%2C%20and%20pricing%20details.%0A%0ALooking%20forward%20to%20your%20response.%0AThank%20you."
+                  >
+                    Get Best Quote
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* BRAND SLIDER SECTION */}
+        <section className="bg-background pb-16 md:pb-32 mt-5">
+          <div className="group relative m-auto max-w-6xl px-6">
+            <div className="flex flex-col items-center md:flex-row">
+              <div className="md:max-w-44 md:border-r md:pr-6">
+                <p className="text-end text-sm">We work with the best brands</p>
+              </div>
+
+              <div className="relative py-6 md:w-[calc(100%-11rem)]">
+                <InfiniteSlider speedOnHover={20} speed={40} gap={112}>
+                  {[
+                    "lycra.com",
+                    "www.directalpine.com",
+                    "vuoriclothing.com",
+                    "www.thrudark.com",
+                    "www.aritzia.com",
+                    "satisfyrunning.com",
+                    "obermeyer.com",
+                    "forloh.com",
+                  ].map((site) => (
+                    <div key={site} className="flex">
+                      <img
+                        className="mx-auto h-14 w-fit"
+                        src={`https://cdn.brandfetch.io/${site}`}
+                        alt={site}
+                      />
                     </div>
-                </section>
-                <section className="bg-background pb-16 md:pb-32">
-                    <div className="group relative m-auto max-w-6xl px-6">
-                        <div className="flex flex-col items-center md:flex-row">
-                            <div className="md:max-w-44 md:border-r md:pr-6">
-                                <p className="text-end text-sm">We work with the best brands</p>
-                            </div>
-                            <div className="relative py-6 md:w-[calc(100%-11rem)]">
-                                <InfiniteSlider
-                                    speedOnHover={20}
-                                    speed={40}
-                                    gap={112}>
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-15 w-fit"
-                                            src="https://cdn.brandfetch.io/lycra.com?c=1id0prbph0q_bx0iJsm"
-                                            alt="Lycra Logo"
-                                            height="20"
-                                            width="auto"
-                                        />
-                                    </div>
+                  ))}
+                </InfiniteSlider>
 
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-14 w-fit"
-                                            src="https://cdn.brandfetch.io/www.directalpine.com?c=1id0prbph0q_bx0iJsm"
-                                            alt="Direct Alpine Logo"
-                                            height="16"
-                                            width="auto"
-                                        />
-                                    </div>
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-14 w-fit"
-                                            src="https://cdn.brandfetch.io/vuoriclothing.com?c=1id0prbph0q_bx0iJsm"
-                                            alt="Vuori Clothing Logo"
-                                            height="16"
-                                            width="auto"
-                                        />
-                                    </div>
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-15 w-fit"
-                                            src="https://cdn.brandfetch.io/www.thrudark.com?c=1id0prbph0q_bx0iJsm"
-                                            alt="Thrudark Logo"
-                                            height="20"
-                                            width="auto"
-                                        />
-                                    </div>
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-15 w-fit"
-                                            src="https://cdn.brandfetch.io/www.aritzia.com?c=1id0prbph0q_bx0iJsm"
-                                            alt="Aritzia Logo"
-                                            height="20"
-                                            width="auto"
-                                        />
-                                    </div>
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-14 w-fit"
-                                            src="https://cdn.brandfetch.io/satisfyrunning.com?c=1id0prbph0q_bx0iJsm"
-                                            alt="Satisfy Running Logo"
-                                            height="16"
-                                            width="auto"
-                                        />
-                                    </div>
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-17 w-fit"
-                                            src="https://cdn.brandfetch.io/obermeyer.com?c=1id0prbph0q_bx0iJsm"
-                                            alt="Obermeyer Logo"
-                                            height="28"
-                                            width="auto"
-                                        />
-                                    </div>
+                <div className="absolute inset-y-0 left-0 w-20 bg-linear-to-r from-background" />
+                <div className="absolute inset-y-0 right-0 w-20 bg-linear-to-l from-background" />
 
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-16 w-fit"
-                                            src="https://cdn.brandfetch.io/forloh.com?c=1id0prbph0q_bx0iJsm"
-                                            alt="Forloh Logo"
-                                            height="24"
-                                            width="auto"
-                                        />
-                                    </div>
-                                </InfiniteSlider>
-
-                                <div className="bg-linear-to-r from-background absolute inset-y-0 left-0 w-20"></div>
-                                <div className="bg-linear-to-l from-background absolute inset-y-0 right-0 w-20"></div>
-                                <ProgressiveBlur
-                                    className="pointer-events-none absolute left-0 top-0 h-full w-20"
-                                    direction="left"
-                                    blurIntensity={1}
-                                />
-                                <ProgressiveBlur
-                                    className="pointer-events-none absolute right-0 top-0 h-full w-20"
-                                    direction="right"
-                                    blurIntensity={1}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </main>
-        </>
-    )
+                <ProgressiveBlur
+                  className="pointer-events-none absolute left-0 top-0 h-full w-20"
+                  direction="left"
+                  blurIntensity={1}
+                />
+                <ProgressiveBlur
+                  className="pointer-events-none absolute right-0 top-0 h-full w-20"
+                  direction="right"
+                  blurIntensity={1}
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
+  )
 }
