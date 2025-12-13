@@ -85,7 +85,7 @@ export default function ContactSection() {
                             <div className="mt-auto pt-6">
                                 <Button asChild className="w-full" variant="outline">
                                     <Link
-                                        href="https://www.google.com/maps/search/511%2C%20Industrial%20Area%20C%2C%20Dhandari%20Kalan%2C%20Ludhiana%2C%20Punjab%20141003%2C%20India/@30.8579,75.9147,17z?hl=en"
+                                        href="https://www.google.com/maps?q=30.8717201,75.9044335&z=17&hl=en"
                                         target="_blank"
                                     >
                                         View on Map
