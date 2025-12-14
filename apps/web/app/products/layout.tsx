@@ -11,7 +11,7 @@ export default function ProductsLayout({ children }: ProductsLayoutProps) {
     <>
       <HeroHeader />
 
-      <main className="pt-24 min-h-screen">
+      <main className="pt-4 min-h-screen">
         {children}
       </main>
 

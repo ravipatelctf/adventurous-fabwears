@@ -51,6 +51,16 @@ export default async function ProductPage({ params }: PageProps) {
             {product.name}
           </h1>
 
+          {/* CTA */}
+          <Button asChild size="lg">
+            <a
+              href={getProductWhatsAppLink(product)}
+              target="_blank"
+            >
+              Request Best Quote on WhatsApp
+            </a>
+          </Button>
+
           <p className="text-muted-foreground text-lg">
             {product.shortDescription}
           </p>
@@ -82,16 +92,6 @@ export default async function ProductPage({ params }: PageProps) {
               ))}
             </ul>
           </div>
-
-          {/* CTA */}
-          <Button asChild size="lg">
-            <a
-              href={getProductWhatsAppLink(product)}
-              target="_blank"
-            >
-              Request Best Quote on WhatsApp
-            </a>
-          </Button>
         </div>
       </div>
     </section>
