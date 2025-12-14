@@ -2,11 +2,11 @@ import FooterSection from "@/components/footer"
 import { HeroHeader } from "@/components/header"
 import type { ReactNode } from "react"
 
-type ProductsLayoutProps = {
+type AboutLayoutProps = {
   children: ReactNode
 }
 
-export default function ProductsLayout({ children }: ProductsLayoutProps) {
+export default function AboutLayout({ children }: AboutLayoutProps) {
   return (
     <>
       <HeroHeader />

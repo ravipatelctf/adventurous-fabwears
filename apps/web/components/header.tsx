@@ -19,7 +19,7 @@ export const HeroHeader = () => {
         <header>
             <nav
                 data-state={menuState && 'active'}
-                className="bg-background/50 fixed z-20 w-full border-b backdrop-blur-3xl">
+                className="bg-background fixed z-20 w-full border-b backdrop-blur-3xl">
                 <div className="mx-auto max-w-6xl px-6 transition-all duration-300">
                     <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
                         <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
@@ -75,14 +75,14 @@ export const HeroHeader = () => {
                                     variant="outline"
                                     size="sm">
                                     <Link target="_blank" href="https://wa.me/919988940158?text=Hello%20Adventurous%20Fabwears%20Team%2C%0A%0AI%20am%20interested%20in%20your%20Lycra%C2%AE%2C%20sportswear%2C%20and%20activewear%20fabric%20range.%0APlease%20share%20your%20latest%20fabric%20catalog%2C%20specifications%2C%20MOQ%2C%20and%20pricing%20details.%0A%0ALooking%20forward%20to%20your%20response.%0AThank%20you.">
-                                        <Phone /><span>+919988940158</span>
+                                        <Phone /><span>CALL</span>
                                     </Link>
                                 </Button>
                                 <Button
                                     asChild
                                     size="sm">
                                     <Link target="_blank" href="mailto:adventurousfabwears@gmail.com">
-                                        <Mail /><span>adventurousfabwears@gmail.com</span>
+                                        <Mail /><span>EMAIL</span>
                                     </Link>
                                 </Button>
                             </div>
