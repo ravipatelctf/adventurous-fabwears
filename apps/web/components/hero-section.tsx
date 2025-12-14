@@ -48,9 +48,9 @@ export default function HeroSection() {
                 <Button asChild size="lg" variant="ghost" className="px-6 text-white">
                   <Link
                     target="_blank"
-                    href="https://wa.me/919988940158?text=Hello%20Adventurous%20Fabwears%20Team%2C%0A%0AI%20am%20interested%20in%20your%20Lycra%C2%AE%2C%20sportswear%2C%20and%20activewear%20fabric%20range.%0APlease%20share%20your%20latest%20fabric%20catalog%2C%20specifications%2C%20MOQ%2C%20and%20pricing%20details.%0A%0ALooking%20forward%20to%20your%20response.%0AThank%20you."
+                    href="https://drive.google.com/file/d/1BaKo6ylqks4jySOioCC3MZ7GW41zznrN/view?usp=sharing"
                   >
-                    Get Best Quote
+                    View Catalogue
                   </Link>
                 </Button>
               </div>
