@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function ProductsPage() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-12">
+    <section className="mx-auto max-w-7xl px-6 py-24">
       <h1 className="text-4xl font-bold mb-4">
         Performance Fabric Products
       </h1>

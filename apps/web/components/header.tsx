@@ -6,11 +6,11 @@ import React from 'react'
 import { Button } from '@workspace/ui/components/button'
 
 const menuItems = [
-    { name: 'Products', href: '/#products' },
-    { name: 'About', href: '/#about' },
-    { name: 'Testimonials', href: '/#testimonials' },
-    { name: 'Contact', href: '/#contact' },
-    { name: 'FAQs', href: '/#faqs' },
+    { name: 'Products', href: '/products' },
+    { name: 'About', href: '/about' },
+    { name: 'Testimonials', href: '/testimonials' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'FAQs', href: '/faqs' },
 ]
 
 export const HeroHeader = () => {

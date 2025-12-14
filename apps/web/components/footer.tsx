@@ -4,28 +4,24 @@ import Link from 'next/link'
 const links = [
     {
         title: 'Products',
-        href: '#link',
+        href: '/products',
     },
     {
         title: 'About',
-        href: '#link',
+        href: '/about',
     },
     {
         title: 'FAQs',
-        href: '#link',
+        href: '/faqs',
     },
     {
         title: 'Contact',
-        href: '#link',
+        href: '/contact',
     },
-    // {
-    //     title: 'Help',
-    //     href: '#',
-    // },
-    // {
-    //     title: 'About',
-    //     href: '#',
-    // },
+    {
+        title: 'Testimonials',
+        href: '/testimonials',
+    },
 ]
 
 export default function FooterSection() {
