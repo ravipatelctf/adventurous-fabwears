@@ -68,16 +68,16 @@ export default function ProductCatalog() {
                         className="rounded-lg object-cover w-full h-full"
                       />
 
-                      {/* <Button asChild className="mt-auto w-full">
+                      <Button asChild className="mt-auto w-full">
                         <Link href={`/products/${product.slug}`}>
                           View Details
                         </Link>
-                      </Button> */}
-                      <Button asChild className="w-full">
+                      </Button>
+                      {/* <Button asChild className="w-full">
                           <Link target="_blank" href={getProductWhatsAppLink(product)}>
                               Request Best Quote
                           </Link>
-                      </Button>
+                      </Button> */}
                     </CardContent>
                   </Card>
                 </CarouselItem>

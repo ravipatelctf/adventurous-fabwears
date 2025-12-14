@@ -1,6 +1,7 @@
 const WHATSAPP_NUMBER = "919988940158";
 
 type ProductEnquiry = {
+  slug: string;
   name: string;
   image: string;
 };
@@ -33,8 +34,8 @@ Please share:
 - Pricing
 - Delivery timeline
 
-Product reference image:
-https://adventurousfabwears.co.in/${product.image}
+Product reference:
+https://adventurousfabwears.co.in/products/${product.slug}
 
 Looking forward to your response.
 Thank you.
