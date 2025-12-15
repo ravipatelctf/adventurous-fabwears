@@ -221,29 +221,6 @@ export const products: Product[] = [
   /* ===================== WOVEN & WINTER ===================== */
 
   {
-    slug: "taffeta-fabric",
-    name: "Taffeta Fabric",
-    fabricType: "Woven",
-    media: [
-      { type: "image", src: placeholder("Taffeta Fabric"), alt: "Taffeta fabric" },
-      { type: "image", src: placeholder("Taffeta Texture"), alt: "Taffeta texture" },
-      { type: "video", src: "/videos/hero-video-1.mp4" },
-    ],
-    shortDescription: "Lightweight crisp woven fabric.",
-    longDescription:
-      "Taffeta fabric is widely used in jackets and outerwear due to its firmness and durability.",
-    gsm: "60–90 GSM",
-    width: "58 inches",
-    stretch: "No stretch",
-    composition: "Polyester",
-    texture: "Crisp",
-    colors: "Bright",
-    moq: "800 kg",
-    packaging: "Roll packing",
-    applications: ["Jackets"],
-  },
-
-  {
     slug: "fleece-fabric",
     name: "Fleece Fabric",
     fabricType: "Knitted",
