@@ -25,12 +25,11 @@ type PageProps = {
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const resolvedParams = await params;
+  const resolvedParams = await params
   const product = getProductBySlug(resolvedParams.slug)
 
   if (!product) return {}
 
-  // Use first image from media as preview
   const previewImage =
     product.media.find((m) => m.type === "image")?.src
 
@@ -43,6 +42,7 @@ export async function generateMetadata({ params }: PageProps) {
       description: product.shortDescription,
       url: `https://adventurousfabwears.co.in/products/${product.slug}`,
       siteName: "Adventurous Fabwears",
+      type: "article",
       images: [
         {
           url: previewImage!,
@@ -51,7 +51,6 @@ export async function generateMetadata({ params }: PageProps) {
           alt: product.name,
         },
       ],
-      type: "product",
     },
 
     twitter: {
@@ -62,6 +61,7 @@ export async function generateMetadata({ params }: PageProps) {
     },
   }
 }
+
 
 
 export default async function Page({ params }: PageProps) {
