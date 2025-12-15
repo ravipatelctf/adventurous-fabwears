@@ -60,9 +60,9 @@ export const products: Product[] = [
     name: "Interlock Lycra Fabric",
     fabricType: "Knitted",
     media: [
-      { type: "image", src: placeholder("Interlock Lycra Fabric"), alt: "Interlock Lycra fabric sample" },
-      { type: "image", src: placeholder("Interlock Lycra Texture"), alt: "Interlock Lycra texture" },
-      { type: "video", src: "/videos/hero-video-1.mp4" },
+      { type: "image", src: "/products/interlock-lycra/interlock-lycra-image-01.png", alt: "Interlock Lycra fabric image sample 1" },
+      { type: "image", src: "/products/interlock-lycra/interlock-lycra-video-1.gif", alt: "Interlock Lycra fabric gif sample 1" },
+      { type: "image", src: "/products/interlock-lycra/interlock-lycra-image-02.png", alt: "Interlock Lycra fabric image sample 2" },
     ],
     shortDescription: "Dense interlock Lycra with superior structure and elasticity.",
     longDescription:
