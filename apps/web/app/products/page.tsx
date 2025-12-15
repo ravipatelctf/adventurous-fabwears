@@ -3,7 +3,26 @@ import Link from "next/link"
 
 import { products } from "@/lib/products"
 
-export default function ProductsPage() {
+export const metadata = {
+  title: "Fabric Products | Adventurous Fabwears",
+  description: "Explore premium knitted, woven, and performance fabrics.",
+  openGraph: {
+    title: "Fabric Products | Adventurous Fabwears",
+    description: "Explore premium knitted, woven, and performance fabrics.",
+    url: "https://adventurousfabwears.co.in/products",
+    siteName: "Adventurous Fabwears",
+    images: [
+      {
+        url: "https://adventurousfabwears.co.in/og/products-preview.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+}
+
+
+export default function Page() {
   return (
     <section className="max-w-7xl mx-auto px-6 py-24">
       {/* Page Header */}

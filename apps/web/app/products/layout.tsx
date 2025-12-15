@@ -6,7 +6,7 @@ type ProductsLayoutProps = {
   children: ReactNode
 }
 
-export default function ProductsLayout({ children }: ProductsLayoutProps) {
+export default function Layout({ children }: ProductsLayoutProps) {
   return (
     <>
       <HeroHeader />

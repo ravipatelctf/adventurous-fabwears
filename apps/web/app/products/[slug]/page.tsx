@@ -25,16 +25,44 @@ type PageProps = {
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const resolvedParams = await params
+  const resolvedParams = await params;
   const product = getProductBySlug(resolvedParams.slug)
 
   if (!product) return {}
 
+  // Use first image from media as preview
+  const previewImage =
+    product.media.find((m) => m.type === "image")?.src
+
   return {
     title: `${product.name} | Adventurous Fabwears`,
     description: product.shortDescription,
+
+    openGraph: {
+      title: product.name,
+      description: product.shortDescription,
+      url: `https://adventurousfabwears.co.in/products/${product.slug}`,
+      siteName: "Adventurous Fabwears",
+      images: [
+        {
+          url: previewImage!,
+          width: 800,
+          height: 800,
+          alt: product.name,
+        },
+      ],
+      type: "product",
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: product.name,
+      description: product.shortDescription,
+      images: [previewImage!],
+    },
   }
 }
+
 
 export default async function Page({ params }: PageProps) {
   const resolvedParams = await params
