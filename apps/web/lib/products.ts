@@ -1,115 +1,269 @@
+// apps/web/lib/products.ts
+
+export type ProductMedia =
+  | { type: "image"; src: string; alt: string }
+  | { type: "video"; src: string }
+
 export type Product = {
   slug: string
   name: string
-  image: string
+  fabricType: string
+  media: ProductMedia[]
 
   shortDescription: string
-  longDescription?: string
+  longDescription: string
 
   gsm: string
-  moq: string
   width: string
+  stretch: string
   composition: string
-  stretch?: string
+  texture: string
+  colors: string
+
+  moq: string
+  packaging: string
 
   applications: string[]
 }
 
+const placeholder = (text: string) =>
+  `https://placehold.co/800x800?text=${encodeURIComponent(text)}`
+
 export const products: Product[] = [
+  /* ===================== LYCRA & PERFORMANCE ===================== */
+
   {
-    slug: "ns-lycra-fabric",
-    name: "NS Lycra Fabric",
-    image: "/product-images/ns-lycra-fabric/ns-lycra-fabric-500x500.webp",
-
-    shortDescription:
-      "High-performance NS Lycra fabric engineered for superior stretch, durability, and comfort.",
-
+    slug: "single-jersey-lycra",
+    name: "Single Jersey Lycra Fabric",
+    fabricType: "Knitted",
+    media: [
+      { type: "image", src: placeholder("Single Jersey Lycra Fabric"), alt: "Single Jersey Lycra fabric sample" },
+      { type: "image", src: placeholder("Single Jersey Lycra Close View"), alt: "Single Jersey Lycra close-up" },
+      { type: "video", src: "/videos/hero-video-1.mp4" },
+    ],
+    shortDescription: "Lightweight Lycra fabric with excellent stretch and breathability.",
     longDescription:
-      "NS Lycra fabric is a premium knitted fabric widely used in sportswear, activewear, and performance apparel. It provides excellent 4-way stretch with strong recovery, ensuring long-lasting shape retention even after repeated use. The fabric is breathable, smooth to touch, and ideal for garments that demand flexibility, strength, and comfort during intense physical activity.",
-
-    gsm: "160 – 220 GSM",
-    moq: "300 kg per color",
-    width: "58 – 60 inches",
-    composition: "Polyester + Spandex (Lycra®)",
+      "Single Jersey Lycra is widely used for T-shirts and activewear. It offers smooth surface finish, 4-way stretch, and breathable comfort.",
+    gsm: "160–220 GSM",
+    width: "58–60 inches",
     stretch: "4-way stretch",
-
-    applications: ["Sportswear", "Activewear", "Athleisure"],
+    composition: "Polyester / Cotton + Spandex",
+    texture: "Smooth, breathable",
+    colors: "Black, Navy, Melange",
+    moq: "300 kg",
+    packaging: "Roll packing with poly wrap",
+    applications: ["T-shirts", "Activewear"],
   },
 
   {
-    slug: "dryfit-fabric",
-    name: "Dry Fit Fabric",
-    image: "/product-images/dryfit/super-poly-fabric-500x500.webp",
-
-    shortDescription:
-      "Lightweight dry-fit fabric designed for excellent moisture management and breathability.",
-
+    slug: "interlock-lycra",
+    name: "Interlock Lycra Fabric",
+    fabricType: "Knitted",
+    media: [
+      { type: "image", src: placeholder("Interlock Lycra Fabric"), alt: "Interlock Lycra fabric sample" },
+      { type: "image", src: placeholder("Interlock Lycra Texture"), alt: "Interlock Lycra texture" },
+      { type: "video", src: "/videos/hero-video-1.mp4" },
+    ],
+    shortDescription: "Dense interlock Lycra with superior structure and elasticity.",
     longDescription:
-      "Dry Fit fabric is specially engineered to wick moisture away from the body, keeping athletes dry and comfortable during workouts. The fabric dries quickly, remains lightweight, and allows airflow, making it suitable for high-performance sports and fitness apparel.",
+      "Interlock Lycra is a double-knit fabric providing excellent opacity, durability, and stretch recovery.",
+    gsm: "200–260 GSM",
+    width: "58–60 inches",
+    stretch: "4-way stretch",
+    composition: "Polyester + Spandex",
+    texture: "Dense, smooth",
+    colors: "Black, Grey, White",
+    moq: "300 kg",
+    packaging: "Roll packing with poly wrap",
+    applications: ["Sportswear", "Leggings"],
+  },
 
-    gsm: "140 – 180 GSM",
-    moq: "300 kg per color",
+  {
+    slug: "jacquard-lycra",
+    name: "Jacquard Lycra Fabric",
+    fabricType: "Knitted",
+    media: [
+      { type: "image", src: placeholder("Jacquard Lycra Fabric"), alt: "Jacquard Lycra fabric sample" },
+      { type: "image", src: placeholder("Jacquard Lycra Pattern"), alt: "Jacquard Lycra pattern detail" },
+      { type: "video", src: "/videos/hero-video-1.mp4" },
+    ],
+    shortDescription: "Premium patterned Lycra fabric for high-end activewear.",
+    longDescription:
+      "Jacquard Lycra features textured knit patterns while maintaining stretch and comfort.",
+    gsm: "220–280 GSM",
     width: "58 inches",
-    composition: "100% Polyester",
-
-    applications: ["Gym Wear", "Running Wear", "Training Apparel"],
+    stretch: "4-way stretch",
+    composition: "Polyester + Spandex",
+    texture: "Patterned texture",
+    colors: "Custom dyed",
+    moq: "500 kg",
+    packaging: "Roll packing with inner poly",
+    applications: ["Premium Activewear"],
   },
 
   {
-    slug: "interlock-fabric",
-    name: "Polyester Interlock Fabric",
-    image: "/product-images/interlock/polyester-interlock-fabric-500x500.webp",
-
-    shortDescription:
-      "Smooth and durable interlock fabric with excellent structure and comfort.",
-
+    slug: "micro-peach-lycra",
+    name: "Micro Peach Lycra Fabric",
+    fabricType: "Knitted",
+    media: [
+      { type: "image", src: placeholder("Micro Peach Lycra Fabric"), alt: "Micro Peach Lycra fabric" },
+      { type: "image", src: placeholder("Micro Peach Soft Texture"), alt: "Micro Peach Lycra close-up" },
+      { type: "video", src: "/videos/hero-video-1.mp4" },
+    ],
+    shortDescription: "Ultra-soft Lycra with peach-skin finish.",
     longDescription:
-      "Polyester Interlock fabric is a double-knit fabric known for its smooth surface on both sides and enhanced durability. It offers good stretch, excellent opacity, and a premium finish, making it suitable for structured sportswear and casual apparel.",
+      "Micro Peach Lycra combines softness with stretch, making it ideal for yoga and comfort wear.",
+    gsm: "180–240 GSM",
+    width: "58–60 inches",
+    stretch: "4-way stretch",
+    composition: "Polyester + Spandex",
+    texture: "Peach-skin soft",
+    colors: "Pastels, Dark solids",
+    moq: "300 kg",
+    packaging: "Roll packing",
+    applications: ["Yoga Wear"],
+  },
 
-    gsm: "180 – 240 GSM",
-    moq: "300 kg per color",
+  {
+    slug: "nylon-lycra",
+    name: "Nylon Lycra Fabric",
+    fabricType: "Knitted",
+    media: [
+      { type: "image", src: placeholder("Nylon Lycra Fabric"), alt: "Nylon Lycra fabric" },
+      { type: "image", src: placeholder("Nylon Lycra Close View"), alt: "Nylon Lycra close-up" },
+      { type: "video", src: "/videos/hero-video-1.mp4" },
+    ],
+    shortDescription: "High-performance Lycra with cool touch and strength.",
+    longDescription:
+      "Nylon Lycra is widely used in swimwear and compression garments due to its elasticity and moisture resistance.",
+    gsm: "180–250 GSM",
+    width: "58 inches",
+    stretch: "4-way stretch",
+    composition: "Nylon + Spandex",
+    texture: "Cool touch",
+    colors: "Black, Neon",
+    moq: "300 kg",
+    packaging: "Roll packing with moisture barrier",
+    applications: ["Swimwear"],
+  },
+
+  /* ===================== KNITS & BASICS ===================== */
+
+  {
+    slug: "dot-knit",
+    name: "Dot Knit Fabric",
+    fabricType: "Knitted",
+    media: [
+      { type: "image", src: placeholder("Dot Knit Fabric"), alt: "Dot Knit fabric" },
+      { type: "image", src: placeholder("Dot Knit Texture"), alt: "Dot Knit texture" },
+      { type: "video", src: "/videos/hero-video-1.mp4" },
+    ],
+    shortDescription: "Breathable knit fabric with dot structure.",
+    longDescription:
+      "Dot Knit fabric allows airflow and comfort, commonly used in sports T-shirts.",
+    gsm: "160–200 GSM",
     width: "60 inches",
-    composition: "100% Polyester",
-
-    applications: ["Tracksuits", "T-shirts", "Sports Tops"],
+    stretch: "2-way stretch",
+    composition: "Polyester",
+    texture: "Breathable dots",
+    colors: "Light colors",
+    moq: "500 kg",
+    packaging: "Roll packing",
+    applications: ["Sports Tees"],
   },
 
   {
-    slug: "knitted-mesh",
-    name: "Knitted Mesh Fabric",
-    image: "/product-images/mesh/karera-plain-fabric-500x500.webp",
-
-    shortDescription:
-      "Breathable knitted mesh fabric ideal for ventilation and airflow.",
-
+    slug: "rice-knit",
+    name: "Rice Knit Fabric",
+    fabricType: "Knitted",
+    media: [
+      { type: "image", src: placeholder("Rice Knit Fabric"), alt: "Rice Knit fabric" },
+      { type: "image", src: placeholder("Rice Knit Texture"), alt: "Rice Knit texture" },
+      { type: "video", src: "/videos/hero-video-1.mp4" },
+    ],
+    shortDescription: "Textured knit fabric with grain-like appearance.",
     longDescription:
-      "Knitted Mesh fabric is designed to provide maximum airflow and ventilation. Its open-knit structure makes it ideal for performance sportswear where breathability is critical. Commonly used as panels or full garments in jerseys and training apparel.",
-
-    gsm: "120 – 160 GSM",
-    moq: "300 kg per color",
-    width: "58 inches",
-    composition: "100% Polyester",
-
-    applications: ["Jerseys", "Ventilation Panels", "Training Wear"],
+      "Rice Knit fabric offers durability and style for track and sportswear.",
+    gsm: "180–220 GSM",
+    width: "60 inches",
+    stretch: "2-way stretch",
+    composition: "Polyester",
+    texture: "Grain texture",
+    colors: "Dark shades",
+    moq: "500 kg",
+    packaging: "Roll packing",
+    applications: ["Track Wear"],
   },
 
   {
-    slug: "micro-polyester",
-    name: "Micro Polyester Fabric",
-    image: "/product-images/micro-poly/micro-polyester-fabric-500x500.webp",
-
-    shortDescription:
-      "Fine micro polyester fabric with a soft hand-feel and high durability.",
-
+    slug: "cotton-sinker",
+    name: "Cotton Sinker Fabric",
+    fabricType: "Knitted",
+    media: [
+      { type: "image", src: placeholder("Cotton Sinker Fabric"), alt: "Cotton Sinker fabric" },
+      { type: "image", src: placeholder("Cotton Sinker Texture"), alt: "Cotton Sinker texture" },
+      { type: "video", src: "/videos/hero-video-1.mp4" },
+    ],
+    shortDescription: "Soft breathable cotton knit fabric.",
     longDescription:
-      "Micro Polyester fabric features finely woven fibers that provide a smooth, soft texture along with excellent durability. It is lightweight, comfortable, and maintains color vibrancy even after multiple washes, making it ideal for premium sports and activewear.",
+      "Cotton Sinker fabric is widely used for comfortable everyday T-shirts.",
+    gsm: "160–200 GSM",
+    width: "60 inches",
+    stretch: "Low stretch",
+    composition: "100% Cotton",
+    texture: "Soft, breathable",
+    colors: "White, Melange",
+    moq: "300 kg",
+    packaging: "Roll packing",
+    applications: ["T-shirts"],
+  },
 
-    gsm: "150 – 190 GSM",
-    moq: "300 kg per color",
+  /* ===================== WOVEN & WINTER ===================== */
+
+  {
+    slug: "taffeta-fabric",
+    name: "Taffeta Fabric",
+    fabricType: "Woven",
+    media: [
+      { type: "image", src: placeholder("Taffeta Fabric"), alt: "Taffeta fabric" },
+      { type: "image", src: placeholder("Taffeta Texture"), alt: "Taffeta texture" },
+      { type: "video", src: "/videos/hero-video-1.mp4" },
+    ],
+    shortDescription: "Lightweight crisp woven fabric.",
+    longDescription:
+      "Taffeta fabric is widely used in jackets and outerwear due to its firmness and durability.",
+    gsm: "60–90 GSM",
     width: "58 inches",
-    composition: "100% Micro Polyester",
+    stretch: "No stretch",
+    composition: "Polyester",
+    texture: "Crisp",
+    colors: "Bright",
+    moq: "800 kg",
+    packaging: "Roll packing",
+    applications: ["Jackets"],
+  },
 
-    applications: ["Sports T-shirts", "Activewear", "Casual Wear"],
+  {
+    slug: "fleece-fabric",
+    name: "Fleece Fabric",
+    fabricType: "Knitted",
+    media: [
+      { type: "image", src: placeholder("Fleece Fabric"), alt: "Fleece fabric" },
+      { type: "image", src: placeholder("Fleece Inner Brushed"), alt: "Fleece brushed texture" },
+      { type: "video", src: "/videos/hero-video-1.mp4" },
+    ],
+    shortDescription: "Warm fleece with brushed interior.",
+    longDescription:
+      "Fleece fabric provides insulation and comfort for winter garments.",
+    gsm: "280–350 GSM",
+    width: "60 inches",
+    stretch: "Medium stretch",
+    composition: "Poly / Cotton",
+    texture: "Warm, brushed",
+    colors: "Dark shades",
+    moq: "300 kg",
+    packaging: "Roll packing",
+    applications: ["Hoodies"],
   },
 ]
 

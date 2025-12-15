@@ -1,45 +1,51 @@
-const WHATSAPP_NUMBER = "919988940158";
+// apps/web/lib/whatsapp.ts
 
-type ProductEnquiry = {
-  slug: string;
-  name: string;
-  image: string;
-};
+import type { Product } from "@/lib/products"
+
+const WHATSAPP_NUMBER = "919988940158"
+
+function createWhatsAppLink(message: string) {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
+}
 
 export function getGeneralWhatsAppLink() {
   const message = `
 Hello Adventurous Fabwears Team,
 
-I am interested in your Lycra®, sportswear, and activewear fabric range.
+I am interested in your fabric range including Lycra®, sportswear, and activewear materials.
 
-Please share your latest fabric catalog, specifications, MOQ, and pricing details.
+Please share:
+- Latest fabric catalog
+- Specifications & GSM options
+- MOQ details
+- Pricing & delivery timeline
 
 Looking forward to your response.
-Thank you.
-  `;
 
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+Thank you.
+  `.trim()
+
+  return createWhatsAppLink(message)
 }
 
-export function getProductWhatsAppLink(product: ProductEnquiry) {
+export function getProductWhatsAppLink(product: Product) {
   const message = `
 Hello Adventurous Fabwears Team,
 
 I am interested in your *${product.name}*.
 
-Please share:
-- GSM options
+Kindly share:
+- GSM options (${product.gsm})
 - Available colors
-- MOQ
-- Pricing
+- MOQ (${product.moq})
+- Pricing details
 - Delivery timeline
 
 Product reference:
 https://adventurousfabwears.co.in/products/${product.slug}
 
-Looking forward to your response.
 Thank you.
-  `;
+  `.trim()
 
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  return createWhatsAppLink(message)
 }

@@ -11,24 +11,31 @@ import {
   CarouselPrevious,
 } from "@workspace/ui/components/carousel"
 
-import { Card, CardContent, CardHeader, CardTitle } from "@workspace/ui/components/card"
-import { Button } from "@workspace/ui/components/button"
-import { getProductWhatsAppLink } from "@/lib/whatsapp"
+import { products } from "@/lib/products"
 
-const products = [
-  { name: "NS Lycra Fabric", image: "/product-images/ns-lycra-fabric/ns-lycra-fabric-500x500.webp", slug: "ns-lycra-fabric" },
-  { name: "Dry Fit Fabric", image: "/product-images/dryfit/super-poly-fabric-500x500.webp", slug: "dryfit-fabric" },
-  { name: "Polyester Interlock", image: "/product-images/interlock/polyester-interlock-fabric-500x500.webp", slug: "interlock-fabric" },
-  { name: "Knitted Mesh Fabric", image: "/product-images/mesh/karera-plain-fabric-500x500.webp", slug: "knitted-mesh" },
-  { name: "Micro Polyester", image: "/product-images/micro-poly/micro-polyester-fabric-500x500.webp", slug: "micro-polyester" },
-]
+/**
+ * Utility: chunk array into groups of 3
+ */
+function chunkArray<T>(arr: T[], size: number): T[][] {
+  const chunks: T[][] = []
+  for (let i = 0; i < arr.length; i += size) {
+    chunks.push(arr.slice(i, i + size))
+  }
+  return chunks
+}
 
+/**
+ * Landing page: show only first N products
+ * (curated / featured)
+ */
+const FEATURED_COUNT = 6
+const featuredProducts = products.slice(0, FEATURED_COUNT)
+const slides = chunkArray(featuredProducts, 3)
 
 export default function ProductCatalog() {
   return (
     <section id="products" className="py-16 md:py-24 bg-background">
       <div className="mx-auto max-w-6xl px-6">
-
         {/* Heading */}
         <h2 className="text-center text-3xl md:text-4xl font-bold">
           Our Fabrics Collection
@@ -38,58 +45,57 @@ export default function ProductCatalog() {
           High quality fabrics crafted for garments, sportswear, and global brands.
         </p>
 
-        {/* CAROUSEL */}
-        <div className="mt-12">
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full relative overflow-visible"
-          >
-            <CarouselContent className="pl-4">
-              {products.map((product, index) => (
-                <CarouselItem
-                  key={index}
-                  className="pl-4 basis-1/1 sm:basis-1/2 md:basis-1/3"
-                >
-                  <Card className="h-full flex flex-col">
-                    <CardHeader>
-                      <CardTitle className="text-lg text-center">{product.name}</CardTitle>
-                    </CardHeader>
+        {/* Carousel */}
+        <div className="mt-12 relative">
+          <Carousel opts={{ loop: true }} className="w-full">
+            <CarouselContent>
+              {slides.map((group, index) => (
+                <CarouselItem key={index}>
+                  {/* 1 × 3 Row */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    {group.map((product) => {
+                      const heroMedia = product.media?.[0]
 
-                    <CardContent className="space-y-4 flex flex-col flex-1">
-                      <Image
-                        unoptimized
-                        src={product.image}
-                        alt={product.name}
-                        width={400}
-                        height={400}
-                        className="rounded-lg object-cover w-full h-full"
-                      />
+                      return (
+                        <Link
+                          key={product.slug}
+                          href={`/products/${product.slug}`}
+                          className="group relative overflow-hidden rounded-xl border bg-background"
+                        >
+                          {/* Image */}
+                          {heroMedia?.type === "image" && (
+                            <Image
+                              unoptimized
+                              src={heroMedia.src}
+                              alt={heroMedia.alt}
+                              width={500}
+                              height={500}
+                              className="h-56 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            />
+                          )}
 
-                      <Button asChild className="mt-auto w-full">
-                        <Link href={`/products/${product.slug}`}>
-                          View Details
+                          {/* Bottom Gradient */}
+                          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/70 to-transparent" />
+
+                          {/* Product Name Badge */}
+                          <div className="pointer-events-none absolute bottom-3 left-3 right-3">
+                            <span className="inline-block text-sm font-semibold text-white bg-black/40 backdrop-blur px-4 py-1.5 rounded-full">
+                              {product.name}
+                            </span>
+                          </div>
                         </Link>
-                      </Button>
-                      {/* <Button asChild className="w-full">
-                          <Link target="_blank" href={getProductWhatsAppLink(product)}>
-                              Request Best Quote
-                          </Link>
-                      </Button> */}
-                    </CardContent>
-                  </Card>
+                      )
+                    })}
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
 
-            {/* ARROWS — FIXED & NOW VISIBLE */}
-            <CarouselPrevious className="hidden sm:flex left-2 bg-background border shadow-lg" />
-            <CarouselNext className="hidden sm:flex right-2 bg-background border shadow-lg" />
+            {/* Arrows */}
+            <CarouselPrevious className="left-2 bg-background border shadow-lg" />
+            <CarouselNext className="right-2 bg-background border shadow-lg" />
           </Carousel>
         </div>
-
       </div>
     </section>
   )
