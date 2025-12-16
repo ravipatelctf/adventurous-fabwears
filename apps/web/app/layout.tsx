@@ -31,7 +31,7 @@ export const metadata: Metadata = {
         url: "https://adventurousfabwears.co.in/adventurous-fabwears-collage.png",
         width: 1200,
         height: 630,
-        alt: "Adventurous Fabwears – Performance Fabrics",
+        alt: "Adventurous Fabwears - Performance Fabrics",
       },
     ],
   },
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     description:
       "Premium Lycra® and performance fabrics for global apparel brands.",
     images: [
-      "https://adventurousfabwears.co.in/adventurous-fabwears-collage.png",
+      "https://adventurousfabwears.co.in/og-af.png",
     ],
   },
 }

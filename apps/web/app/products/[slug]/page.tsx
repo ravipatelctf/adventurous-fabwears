@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const imagePath =
     product.media.find((m) => m.type === "image")?.src ??
-    "/adventurous-fabwears-collage.png"
+    "/og-af.png"
 
   const imageUrl = `https://adventurousfabwears.co.in${imagePath}`
 
