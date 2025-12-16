@@ -1,4 +1,4 @@
-import { Logo } from '@/components/logo'
+import { LogoDark } from "@/components/logo-dark"
 import Link from 'next/link'
 
 const links = [
@@ -26,13 +26,13 @@ const links = [
 
 export default function FooterSection() {
     return (
-        <footer className="py-16 md:py-32">
+        <footer className="py-16 md:py-32 bg-black">
             <div className="mx-auto max-w-5xl px-6">
                 <Link
                     href="/"
                     aria-label="go home"
                     className="mx-auto block size-fit">
-                    <Logo />
+                    <LogoDark className="mb-4" />
                 </Link>
 
                 <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
@@ -97,28 +97,26 @@ export default function FooterSection() {
                                 d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"></path>
                         </svg>
                     </Link>
-                    {/* <Link
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Threads"
-                        className="text-muted-foreground hover:text-primary block">
-                        <svg
-                            className="size-6"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="1em"
-                            height="1em"
-                            viewBox="0 0 24 24">
-                            <path
-                                fill="none"
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="1.5"
-                                d="M19.25 8.505c-1.577-5.867-7-5.5-7-5.5s-7.5-.5-7.5 8.995s7.5 8.996 7.5 8.996s4.458.296 6.5-3.918c.667-1.858.5-5.573-6-5.573c0 0-3 0-3 2.5c0 .976 1 2 2.5 2s3.171-1.027 3.5-3c1-6-4.5-6.5-6-4"
-                                color="currentColor"></path>
-                        </svg>
-                    </Link> */}
+                    <Link
+                    href="https://www.youtube.com/@AdventurousFabwears"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="YouTube"
+                    className="text-muted-foreground hover:text-primary block"
+                    >
+                    <svg
+                        className="size-6"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                        fill="currentColor"
+                        d="M23.498 6.186a2.958 2.958 0 0 0-2.08-2.09C19.57 3.5 12 3.5 12 3.5s-7.57 0-9.418.596a2.958 2.958 0 0 0-2.08 2.09C0 8.036 0 12 0 12s0 3.964.502 5.814a2.958 2.958 0 0 0 2.08 2.09C4.43 20.5 12 20.5 12 20.5s7.57 0 9.418-.596a2.958 2.958 0 0 0 2.08-2.09C24 15.964 24 12 24 12s0-3.964-.502-5.814M9.545 15.568V8.432L15.818 12z"
+                        />
+                    </svg>
+                    </Link>
                     <Link
                         href="https://www.instagram.com/adventurousfabwears"
                         target="_blank"
