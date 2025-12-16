@@ -15,6 +15,16 @@ const menuItems = [
 
 export const HeroHeader = () => {
     const [menuState, setMenuState] = React.useState(false)
+
+    const isMobileDevice = () => {
+    if (typeof navigator === "undefined") return false
+    return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+    }
+
+    const emailHref = isMobileDevice()
+    ? "mailto:adventurousfabwears@gmail.com"
+    : "https://mail.google.com/mail/?view=cm&fs=1&to=adventurousfabwears@gmail.com"
+
     return (
         <header>
             <nav
@@ -78,17 +88,15 @@ export const HeroHeader = () => {
                                         <Phone /><span>+91 99889 40158</span>
                                     </a>
                                 </Button>
-                                <Button
-                                    asChild
-                                    variant="ghost"
-                                    size="sm">
-                                    <a
-                                        href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@adventurousfabwears.com"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <Mail /><span>EMAIL</span>
-                                    </a>
+                                <Button asChild variant="ghost" size="sm">
+                                <a
+                                    href={emailHref}
+                                    target={isMobileDevice() ? undefined : "_blank"}
+                                    rel="noopener noreferrer"
+                                >
+                                    <Mail />
+                                    <span>EMAIL</span>
+                                </a>
                                 </Button>
                             </div>
                         </div>
