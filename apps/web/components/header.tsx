@@ -82,7 +82,11 @@ export const HeroHeader = () => {
                                     asChild
                                     variant="ghost"
                                     size="sm">
-                                    <a target="_blank" href="mailto:adventurousfabwears@gmail.com">
+                                    <a
+                                        href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@adventurousfabwears.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         <Mail /><span>EMAIL</span>
                                     </a>
                                 </Button>
