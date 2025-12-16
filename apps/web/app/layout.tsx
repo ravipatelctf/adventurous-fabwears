@@ -5,12 +5,48 @@ import { Suspense } from "react"
 import "@workspace/ui/globals.css"
 import { Providers } from "@/components/providers"
 import { GAPageView } from "@/components/ga-page-view"
+import type { Metadata } from "next"
 
-export const metadata = {
-  icons: {
-    icon: "/favicon.jpeg",
+export const metadata: Metadata = {
+  metadataBase: new URL("https://adventurousfabwears.co.in"),
+
+  title: {
+    default: "Adventurous Fabwears",
+    template: "%s | Adventurous Fabwears",
+  },
+
+  description:
+    "Premium Lycra® and performance-driven fabrics trusted by global sportswear and activewear brands.",
+
+  openGraph: {
+    type: "website",
+    siteName: "Adventurous Fabwears",
+    title: "Adventurous Fabwears",
+    description:
+      "Leaders in Lycra® and performance fabrics for sportswear, athleisure, and activewear.",
+    url: "https://adventurousfabwears.co.in",
+
+    images: [
+      {
+        url: "https://adventurousfabwears.co.in/adventurous-fabwears-collage.png",
+        width: 1200,
+        height: 630,
+        alt: "Adventurous Fabwears – Performance Fabrics",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Adventurous Fabwears",
+    description:
+      "Premium Lycra® and performance fabrics for global apparel brands.",
+    images: [
+      "https://adventurousfabwears.co.in/adventurous-fabwears-collage.png",
+    ],
   },
 }
+
 
 
 export default function Layout({

@@ -17,37 +17,38 @@ import {
   TableCell,
   TableRow,
 } from "@workspace/ui/components/table"
+import type { Metadata } from "next"
+
 
 type PageProps = {
-  params: {
-    slug: string
-  }
+  params: { slug: string }
 }
 
-export async function generateMetadata({ params }: PageProps) {
-  const resolvedParams = await params
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const resolvedParams = await params;
   const product = getProductBySlug(resolvedParams.slug)
-
   if (!product) return {}
 
-  const previewImage =
-    product.media.find((m) => m.type === "image")?.src
+  const imagePath =
+    product.media.find((m) => m.type === "image")?.src ??
+    "/adventurous-fabwears-collage.png"
+
+  const imageUrl = `https://adventurousfabwears.co.in${imagePath}`
 
   return {
-    title: `${product.name} | Adventurous Fabwears`,
+    title: product.name,
     description: product.shortDescription,
 
     openGraph: {
+      type: "website",
       title: product.name,
       description: product.shortDescription,
       url: `https://adventurousfabwears.co.in/products/${product.slug}`,
-      siteName: "Adventurous Fabwears",
-      type: "article",
       images: [
         {
-          url: previewImage!,
-          width: 800,
-          height: 800,
+          url: imageUrl,
+          width: 1200,
+          height: 630,
           alt: product.name,
         },
       ],
@@ -57,10 +58,11 @@ export async function generateMetadata({ params }: PageProps) {
       card: "summary_large_image",
       title: product.name,
       description: product.shortDescription,
-      images: [previewImage!],
+      images: [imageUrl],
     },
   }
 }
+
 
 
 
