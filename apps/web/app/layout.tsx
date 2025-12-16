@@ -6,7 +6,14 @@ import "@workspace/ui/globals.css"
 import { Providers } from "@/components/providers"
 import { GAPageView } from "@/components/ga-page-view"
 
-export default function RootLayout({
+export const metadata = {
+  icons: {
+    icon: "/favicon.jpeg",
+  },
+}
+
+
+export default function Layout({
   children,
 }: {
   children: React.ReactNode
