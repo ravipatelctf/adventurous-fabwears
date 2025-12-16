@@ -48,7 +48,7 @@ export default function HeroSection() {
                 <Button asChild size="lg" variant="ghost" className="px-6 text-white">
                   <Link
                     target="_blank"
-                    href="https://drive.google.com/file/d/1BaKo6ylqks4jySOioCC3MZ7GW41zznrN/view?usp=sharing"
+                    href="https://drive.google.com/drive/folders/1i9lsFiK4WLlSfXxhzdcumAHfst4-3RjV?usp=sharing"
                   >
                     View Catalogue
                   </Link>

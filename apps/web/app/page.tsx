@@ -15,8 +15,17 @@ export default function Page() {
       <ProductCatalog />
       <AboutSection />
       <WallOfLoveSection />
-      <ContactSection />
       <FAQsTwo />
+      <ContactSection />
+      <div className="mb-10">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSeQefVTkKtF4D1l7m4iJ_yy9TQmk7o0lWYbR-ZfrF50ogw93Q/viewform?embedded=true"
+          width="100%"
+          height="900"
+        >
+          Loading…
+        </iframe>
+      </div>
       <FooterSection />
     </>
   )
