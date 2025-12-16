@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "https://adventurousfabwears.co.in/adventurous-fabwears-collage.png",
+        url: "https://adventurousfabwears.co.in/og-af.png",
         width: 1200,
         height: 630,
         alt: "Adventurous Fabwears - Performance Fabrics",
