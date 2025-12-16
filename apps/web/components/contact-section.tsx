@@ -59,7 +59,7 @@ export default function ContactSection() {
 
                             {/* Push button to bottom */}
                             <div className="mt-auto pt-6">
-                                <Button asChild className="w-full" variant="secondary">
+                                <Button asChild className="w-full">
                                     <Link href="mailto:adventurousfabwears@gmail.com">
                                         Send Email
                                     </Link>
@@ -83,7 +83,7 @@ export default function ContactSection() {
 
                             {/* Push button to bottom */}
                             <div className="mt-auto pt-6">
-                                <Button asChild className="w-full" variant="outline">
+                                <Button asChild className="w-full">
                                     <Link
                                         href="https://www.google.com/maps?q=30.8717201,75.9044335&z=17&hl=en"
                                         target="_blank"
