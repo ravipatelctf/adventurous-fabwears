@@ -2,7 +2,6 @@
 
 export type ProductMedia =
   | { type: "image"; src: string; alt: string }
-  | { type: "video"; src: string }
 
 export type Product = {
   slug: string
@@ -26,9 +25,6 @@ export type Product = {
   applications: string[]
 }
 
-const placeholder = (text: string) =>
-  `https://placehold.co/800x800?text=${encodeURIComponent(text)}`
-
 export const products: Product[] = [
   /* ===================== LYCRA & PERFORMANCE ===================== */
 
@@ -37,9 +33,16 @@ export const products: Product[] = [
     name: "Single Jersey Lycra Fabric",
     fabricType: "Knitted",
     media: [
-      { type: "image", src: placeholder("Single Jersey Lycra Fabric"), alt: "Single Jersey Lycra fabric sample" },
-      { type: "image", src: placeholder("Single Jersey Lycra Close View"), alt: "Single Jersey Lycra close-up" },
-      { type: "video", src: "/videos/hero-video-1.mp4" },
+      {
+        type: "image",
+        src: "/products/products/single-jersey-lycra/single-jersey-lycra-img1.jpg",
+        alt: "Single Jersey Lycra fabric flat view",
+      },
+      {
+        type: "image",
+        src: "/products/products/single-jersey-lycra/single-jersey-lycra-img2.webp",
+        alt: "Single Jersey Lycra fabric texture close-up",
+      },
     ],
     shortDescription: "Lightweight Lycra fabric with excellent stretch and breathability.",
     longDescription:
@@ -60,9 +63,16 @@ export const products: Product[] = [
     name: "Interlock Lycra Fabric",
     fabricType: "Knitted",
     media: [
-      { type: "image", src: "/products/interlock-lycra/interlock-lycra-image-01.png", alt: "Interlock Lycra fabric image sample 1" },
-      { type: "image", src: "/products/interlock-lycra/interlock-lycra-video-1.gif", alt: "Interlock Lycra fabric gif sample 1" },
-      { type: "image", src: "/products/interlock-lycra/interlock-lycra-image-02.png", alt: "Interlock Lycra fabric image sample 2" },
+      {
+        type: "image",
+        src: "/products/products/interlock-lycra/interlock-lycra-img1.jpg",
+        alt: "Interlock Lycra fabric sample",
+      },
+      {
+        type: "image",
+        src: "/products/products/interlock-lycra/interlock-lycra-img2.jpg",
+        alt: "Interlock Lycra fabric close-up",
+      },
     ],
     shortDescription: "Dense interlock Lycra with superior structure and elasticity.",
     longDescription:
@@ -83,9 +93,16 @@ export const products: Product[] = [
     name: "Jacquard Lycra Fabric",
     fabricType: "Knitted",
     media: [
-      { type: "image", src: placeholder("Jacquard Lycra Fabric"), alt: "Jacquard Lycra fabric sample" },
-      { type: "image", src: placeholder("Jacquard Lycra Pattern"), alt: "Jacquard Lycra pattern detail" },
-      { type: "video", src: "/videos/hero-video-1.mp4" },
+      {
+        type: "image",
+        src: "/products/products/jacquard-lycra/jacquard-lycra-img1.jpg",
+        alt: "Jacquard Lycra fabric pattern",
+      },
+      {
+        type: "image",
+        src: "/products/products/jacquard-lycra/jacquard-lycra-img2.jpg",
+        alt: "Jacquard Lycra fabric texture",
+      },
     ],
     shortDescription: "Premium patterned Lycra fabric for high-end activewear.",
     longDescription:
@@ -106,9 +123,16 @@ export const products: Product[] = [
     name: "Micro Peach Lycra Fabric",
     fabricType: "Knitted",
     media: [
-      { type: "image", src: placeholder("Micro Peach Lycra Fabric"), alt: "Micro Peach Lycra fabric" },
-      { type: "image", src: placeholder("Micro Peach Soft Texture"), alt: "Micro Peach Lycra close-up" },
-      { type: "video", src: "/videos/hero-video-1.mp4" },
+      {
+        type: "image",
+        src: "/products/products/micro-peach-lycra/micro-peach-lycra-img1.jpg",
+        alt: "Micro Peach Lycra fabric sample",
+      },
+      {
+        type: "image",
+        src: "/products/products/micro-peach-lycra/micro-peach-lycra-img2.avif",
+        alt: "Micro Peach Lycra soft texture",
+      },
     ],
     shortDescription: "Ultra-soft Lycra with peach-skin finish.",
     longDescription:
@@ -129,9 +153,16 @@ export const products: Product[] = [
     name: "Nylon Lycra Fabric",
     fabricType: "Knitted",
     media: [
-      { type: "image", src: placeholder("Nylon Lycra Fabric"), alt: "Nylon Lycra fabric" },
-      { type: "image", src: placeholder("Nylon Lycra Close View"), alt: "Nylon Lycra close-up" },
-      { type: "video", src: "/videos/hero-video-1.mp4" },
+      {
+        type: "image",
+        src: "/products/products/nylon-lycra/nylon-lycra-img1.webp",
+        alt: "Nylon Lycra fabric sample",
+      },
+      {
+        type: "image",
+        src: "/products/products/nylon-lycra/nylon-lycra-img2.jpg",
+        alt: "Nylon Lycra fabric close view",
+      },
     ],
     shortDescription: "High-performance Lycra with cool touch and strength.",
     longDescription:
@@ -154,9 +185,16 @@ export const products: Product[] = [
     name: "Dot Knit Fabric",
     fabricType: "Knitted",
     media: [
-      { type: "image", src: placeholder("Dot Knit Fabric"), alt: "Dot Knit fabric" },
-      { type: "image", src: placeholder("Dot Knit Texture"), alt: "Dot Knit texture" },
-      { type: "video", src: "/videos/hero-video-1.mp4" },
+      {
+        type: "image",
+        src: "/products/products/dot-knit/dot-knit-img1.jpg",
+        alt: "Dot Knit fabric sample",
+      },
+      {
+        type: "image",
+        src: "/products/products/dot-knit/dot-knit-img2.jpg",
+        alt: "Dot Knit fabric texture",
+      },
     ],
     shortDescription: "Breathable knit fabric with dot structure.",
     longDescription:
@@ -177,9 +215,16 @@ export const products: Product[] = [
     name: "Rice Knit Fabric",
     fabricType: "Knitted",
     media: [
-      { type: "image", src: placeholder("Rice Knit Fabric"), alt: "Rice Knit fabric" },
-      { type: "image", src: placeholder("Rice Knit Texture"), alt: "Rice Knit texture" },
-      { type: "video", src: "/videos/hero-video-1.mp4" },
+      {
+        type: "image",
+        src: "/products/products/rice-knit/rice-knit-img1.jpg",
+        alt: "Rice Knit fabric sample",
+      },
+      {
+        type: "image",
+        src: "/products/products/rice-knit/rice-knit-img2.jpg",
+        alt: "Rice Knit fabric texture",
+      },
     ],
     shortDescription: "Textured knit fabric with grain-like appearance.",
     longDescription:
@@ -200,9 +245,16 @@ export const products: Product[] = [
     name: "Cotton Sinker Fabric",
     fabricType: "Knitted",
     media: [
-      { type: "image", src: placeholder("Cotton Sinker Fabric"), alt: "Cotton Sinker fabric" },
-      { type: "image", src: placeholder("Cotton Sinker Texture"), alt: "Cotton Sinker texture" },
-      { type: "video", src: "/videos/hero-video-1.mp4" },
+      {
+        type: "image",
+        src: "/products/products/cotton-sinker/cotton-sinker-img1.jpg",
+        alt: "Cotton Sinker fabric sample",
+      },
+      {
+        type: "image",
+        src: "/products/products/cotton-sinker/cotton-sinker-img2.jpg",
+        alt: "Cotton Sinker fabric texture",
+      },
     ],
     shortDescription: "Soft breathable cotton knit fabric.",
     longDescription:
@@ -225,9 +277,16 @@ export const products: Product[] = [
     name: "Fleece Fabric",
     fabricType: "Knitted",
     media: [
-      { type: "image", src: placeholder("Fleece Fabric"), alt: "Fleece fabric" },
-      { type: "image", src: placeholder("Fleece Inner Brushed"), alt: "Fleece brushed texture" },
-      { type: "video", src: "/videos/hero-video-1.mp4" },
+      {
+        type: "image",
+        src: "/products/products/fleece-fabric/fleece-fabric-img1.jpg",
+        alt: "Fleece fabric outer view",
+      },
+      {
+        type: "image",
+        src: "/products/products/fleece-fabric/fleece-fabric-img2.avif",
+        alt: "Fleece fabric brushed inner texture",
+      },
     ],
     shortDescription: "Warm fleece with brushed interior.",
     longDescription:
