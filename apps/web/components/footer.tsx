@@ -152,7 +152,7 @@ export default function FooterSection() {
                         </svg>
                     </Link> */}
                 </div>
-                <span className="text-muted-foreground block text-center text-sm"> © {new Date().getFullYear()} Adventurous Fabwears, All rights reserved. Built by <a href="https://www.ravipatelctf.com" target="_blank">ravipatelctf</a></span>
+                <span className="text-muted-foreground block text-center text-sm"> © {new Date().getFullYear()} Adventurous Fabwears, All rights reserved.</span>
             </div>
         </footer>
     )
