@@ -188,7 +188,7 @@ export const products: Product[] = [
       {
         type: "image",
         src: "/products/products/dot-knit/dot-knit-img1.jpg",
-        alt: "Dot Knit fabric sample",
+        alt: "Dot Knit fabric texture",
       },
       {
         type: "image",
@@ -220,11 +220,6 @@ export const products: Product[] = [
         src: "/products/products/rice-knit/rice-knit-img1.jpg",
         alt: "Rice Knit fabric sample",
       },
-      {
-        type: "image",
-        src: "/products/products/rice-knit/rice-knit-img2.jpg",
-        alt: "Rice Knit fabric texture",
-      },
     ],
     shortDescription: "Textured knit fabric with grain-like appearance.",
     longDescription:
@@ -245,11 +240,6 @@ export const products: Product[] = [
     name: "Cotton Sinker Fabric",
     fabricType: "Knitted",
     media: [
-      {
-        type: "image",
-        src: "/products/products/cotton-sinker/cotton-sinker-img1.jpg",
-        alt: "Cotton Sinker fabric sample",
-      },
       {
         type: "image",
         src: "/products/products/cotton-sinker/cotton-sinker-img2.jpg",
@@ -291,7 +281,7 @@ export const products: Product[] = [
     shortDescription: "Warm fleece with brushed interior.",
     longDescription:
       "Fleece fabric provides insulation and comfort for winter garments.",
-    gsm: "280–350 GSM",
+    gsm: "280-400 GSM",
     width: "60 inches",
     stretch: "Medium stretch",
     composition: "Poly / Cotton",
