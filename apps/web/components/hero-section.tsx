@@ -31,13 +31,12 @@ export default function HeroSection() {
           {/* Hero Content */}
           <div className="relative z-10 mx-auto max-w-6xl px-6 pt-28 pb-24 md:pt-36 lg:pt-44">
             <div className="max-w-2xl text-center lg:text-left">
-              <h1 className="text-balance text-3xl font-medium text-white md:text-4xl xl:text-5xl">
-                Leaders in Fabrics with Lycra<sup>®</sup> Fiber
+              <h1 className="text-balance text-4xl font-medium text-white md:text-4xl xl:text-5xl">
+                Leaders in High-Performance Sportswear Fabrics
               </h1>
 
               <p className="mt-6 max-w-xl text-lg text-white/90">
-                Premium Lycra® and performance-driven activewear fabrics trusted
-                by global brands for sportswear, athleisure, and high-stretch apparel.
+                Premium sportswear and activewear fabrics engineered for stretch, durability, and long-term performance, trusted by global apparel brands.
               </p>
 
               <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row lg:justify-start">

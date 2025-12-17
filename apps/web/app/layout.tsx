@@ -49,11 +49,7 @@ export const metadata: Metadata = {
 
 
 
-export default function Layout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 
   return (
