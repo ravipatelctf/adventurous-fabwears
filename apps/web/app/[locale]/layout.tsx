@@ -10,9 +10,17 @@ import type { Metadata } from "next"
 
 const SUPPORTED_LOCALES = ["en", "de"]
 
-export async function generateMetadata({params}: {params: { locale: string }}): Promise<Metadata> {
-  const resolvedParams = await params;
-  if (!SUPPORTED_LOCALES.includes(resolvedParams.locale)) notFound()
+type LayoutProps = {
+  children: React.ReactNode
+  params: Promise<{ locale: string }>
+}
+
+export async function generateMetadata(
+  { params }: { params: Promise<{ locale: string }> }
+): Promise<Metadata> {
+  const { locale } = await params
+
+  if (!SUPPORTED_LOCALES.includes(locale)) notFound()
 
   return {
     metadataBase: new URL("https://adventurousfabwears.co.in"),
@@ -28,7 +36,7 @@ export async function generateMetadata({params}: {params: { locale: string }}): 
       title: "Adventurous Fabwears",
       description:
         "Leaders in high-performance sportswear and activewear fabrics.",
-      url: "https://adventurousfabwears.co.in/en",
+      url: `https://adventurousfabwears.co.in/${locale}`,
       images: [
         {
           url: "/og-af.png",
@@ -51,12 +59,9 @@ export async function generateMetadata({params}: {params: { locale: string }}): 
 export default async function Layout({
   children,
   params,
-}: {
-  children: React.ReactNode
-  params: { locale: string }
-}) {
-  const resolvedParams = await params;
-  const { locale } = resolvedParams;
+}: LayoutProps) {
+  const { locale } = await params
+
   if (!SUPPORTED_LOCALES.includes(locale)) notFound()
 
   const messages = (await import(`../../messages/${locale}.json`)).default
