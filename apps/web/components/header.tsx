@@ -4,19 +4,25 @@ import { Logo } from '@/components/logo'
 import { Menu, X, Mail, Phone } from 'lucide-react'
 import React from 'react'
 import { Button } from '@workspace/ui/components/button'
+import { LanguageSwitcher } from './language-switcher'
+import { useLocale, useTranslations } from 'next-intl'
 
-const menuItems = [
-    { name: 'Home', href: '/' },
-    { name: 'Products', href: '/products' },
-    { name: 'About', href: '/about' },
-    { name: 'Testimonials', href: '/testimonials' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'FAQs', href: '/faqs' },
-]
 
 export const HeroHeader = () => {
     const [menuState, setMenuState] = React.useState(false)
     const [emailHref, setEmailHref] = React.useState<string | null>(null)
+
+    const t = useTranslations("nav")
+    const locale = useLocale()
+
+    const menuItems = [
+        { name: t("home"), href: `/${locale}` },
+        { name: t("products"), href: `/${locale}/products` },
+        { name: t("about"), href: `/${locale}/about` },
+        { name: t("testimonials"), href: `/${locale}/testimonials` },
+        { name: t("contact"), href: `/${locale}/contact` },
+        { name: t("faqs"), href: `/${locale}/faqs` },
+    ]
 
     React.useEffect(() => {
     const isMobile =
@@ -36,7 +42,7 @@ export const HeroHeader = () => {
                 className="bg-background fixed z-20 w-full border-b backdrop-blur-3xl">
                 <div className="mx-auto max-w-6xl px-6 transition-all duration-300">
                     <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
-                        <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
+                        <div className="flex w-full items-center justify-between gap-10 lg:w-auto">
                             <Link
                                 href="/"
                                 aria-label="home"
@@ -102,6 +108,7 @@ export const HeroHeader = () => {
                                     <span>EMAIL</span>
                                 </a>
                                 </Button>
+                                <LanguageSwitcher />
                             </div>
                         </div>
                     </div>

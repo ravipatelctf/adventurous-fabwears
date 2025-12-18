@@ -12,6 +12,7 @@ import {
 } from "@workspace/ui/components/carousel"
 
 import { products } from "@/lib/products"
+import { useLocale, useTranslations } from "next-intl"
 
 /**
  * Utility: chunk array into groups of 3
@@ -33,16 +34,18 @@ const featuredProducts = products.slice(0, FEATURED_COUNT)
 const slides = chunkArray(featuredProducts, 3)
 
 export default function ProductCatalog() {
+  const t = useTranslations("catalog")
+  const locale = useLocale()  
   return (
     <section id="products" className="py-16 md:py-24 bg-background">
       <div className="mx-auto max-w-6xl px-6">
         {/* Heading */}
         <h2 className="text-center text-3xl md:text-4xl font-bold">
-          Our Fabrics Collection
+          {t("title")}
         </h2>
 
         <p className="text-center mt-4 text-muted-foreground text-lg">
-          High quality fabrics crafted for garments, sportswear, and global brands.
+          {t("description")}
         </p>
 
         {/* Carousel */}
@@ -59,7 +62,7 @@ export default function ProductCatalog() {
                       return (
                         <Link
                           key={product.slug}
-                          href={`/products/${product.slug}`}
+                          href={`${locale}/products/${product.slug}`}
                           className="group relative overflow-hidden rounded-xl border bg-background"
                         >
                           {/* Image */}

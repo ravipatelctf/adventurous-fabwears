@@ -1,102 +1,114 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@workspace/ui/components/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@workspace/ui/components/card"
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle
+} from "@workspace/ui/components/card"
+import { useTranslations } from "next-intl"
 
 export default function ContactSection() {
-    return (
-        <section id="contact" className="py-16 md:py-24 bg-background">
-            <div className="mx-auto max-w-5xl px-6">
+  const t = useTranslations("contact")
 
-                {/* Heading */}
-                <h2 className="text-3xl md:text-4xl font-bold text-center">
-                    Contact Us
-                </h2>
+  return (
+    <section id="contact" className="py-16 md:py-24 bg-background">
+      <div className="mx-auto max-w-5xl px-6">
 
-                {/* Subheading */}
-                <p className="mt-4 text-muted-foreground text-lg text-center">
-                    We would love to hear from you. Reach out for fabric inquiries,
-                    bulk orders, or custom manufacturing requirements.
-                </p>
+        {/* Heading */}
+        <h2 className="text-3xl md:text-4xl font-bold text-center">
+          {t("title")}
+        </h2>
 
-                {/* Contact Cards */}
-                <div className="mt-12 grid gap-8 md:grid-cols-3">
+        {/* Subheading */}
+        <p className="mt-4 text-muted-foreground text-lg text-center">
+          {t("subtitle")}
+        </p>
 
-                    {/* PHONE CARD */}
-                    <Card className="text-center flex flex-col">
-                        <CardHeader>
-                            <CardTitle className="text-xl">Phone</CardTitle>
-                        </CardHeader>
+        {/* Contact Cards */}
+        <div className="mt-12 grid gap-8 md:grid-cols-3">
 
-                        <CardContent className="flex flex-col flex-1">
-                            <p className="text-muted-foreground text-lg font-medium">
-                                +91 99889 40158
-                            </p>
-                            <p className="text-muted-foreground text-lg font-medium">
-                                +91 62844 90113
-                            </p>
+          {/* PHONE CARD */}
+          <Card className="text-center flex flex-col">
+            <CardHeader>
+              <CardTitle className="text-xl">
+                {t("cards.phone.title")}
+              </CardTitle>
+            </CardHeader>
 
-                            {/* Push button to bottom */}
-                            <div className="mt-auto pt-6">
-                                <Button asChild className="w-full">
-                                    <Link href="https://wa.me/919988940158" target="_blank">
-                                        WhatsApp Us
-                                    </Link>
-                                </Button>
-                            </div>
-                        </CardContent>
-                    </Card>
+            <CardContent className="flex flex-col flex-1">
+              <p className="text-muted-foreground text-lg font-medium">
+                +91 99889 40158
+              </p>
+              <p className="text-muted-foreground text-lg font-medium">
+                +91 62844 90113
+              </p>
 
-                    {/* EMAIL CARD */}
-                    <Card className="text-center flex flex-col">
-                        <CardHeader>
-                            <CardTitle className="text-xl">Email</CardTitle>
-                        </CardHeader>
+              <div className="mt-auto pt-6">
+                <Button asChild className="w-full">
+                  <Link href="https://wa.me/919988940158" target="_blank">
+                    {t("cards.phone.cta")}
+                  </Link>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
 
-                        <CardContent className="flex flex-col flex-1">
-                            <p className="text-muted-foreground text-sm font-medium break-all">
-                                adventurousfabwears@gmail.com
-                            </p>
+          {/* EMAIL CARD */}
+          <Card className="text-center flex flex-col">
+            <CardHeader>
+              <CardTitle className="text-xl">
+                {t("cards.email.title")}
+              </CardTitle>
+            </CardHeader>
 
-                            {/* Push button to bottom */}
-                            <div className="mt-auto pt-6">
-                                <Button asChild className="w-full">
-                                    <Link href="mailto:adventurousfabwears@gmail.com">
-                                        Send Email
-                                    </Link>
-                                </Button>
-                            </div>
-                        </CardContent>
-                    </Card>
+            <CardContent className="flex flex-col flex-1">
+              <p className="text-muted-foreground text-sm font-medium break-all">
+                adventurousfabwears@gmail.com
+              </p>
 
-                    {/* ADDRESS CARD */}
-                    <Card className="text-center flex flex-col">
-                        <CardHeader>
-                            <CardTitle className="text-xl">Address</CardTitle>
-                        </CardHeader>
+              <div className="mt-auto pt-6">
+                <Button asChild className="w-full">
+                  <Link href="mailto:adventurousfabwears@gmail.com">
+                    {t("cards.email.cta")}
+                  </Link>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
 
-                        <CardContent className="flex flex-col flex-1">
-                            <p className="text-muted-foreground text-md leading-relaxed">
-                                Plot No. 511/2-H/B-29,<br />
-                                Shanti Nagar, Giaspura,<br />
-                                Ludhiana - 141014, Punjab, India
-                            </p>
+          {/* ADDRESS CARD */}
+          <Card className="text-center flex flex-col">
+            <CardHeader>
+              <CardTitle className="text-xl">
+                {t("cards.address.title")}
+              </CardTitle>
+            </CardHeader>
 
-                            {/* Push button to bottom */}
-                            <div className="mt-auto pt-6">
-                                <Button asChild className="w-full">
-                                    <Link
-                                        href="https://www.google.com/maps?q=30.8717201,75.9044335&z=17&hl=en"
-                                        target="_blank"
-                                    >
-                                        View on Map
-                                    </Link>
-                                </Button>
-                            </div>
-                        </CardContent>
-                    </Card>
+            <CardContent className="flex flex-col flex-1">
+              <p className="text-muted-foreground text-md leading-relaxed">
+                {t.rich("cards.address.value", {
+                    br: () => <br />
+                })}
+              </p>
 
-                </div>
-            </div>
-        </section>
-    )
+              <div className="mt-auto pt-6">
+                <Button asChild className="w-full">
+                  <Link
+                    href="https://www.google.com/maps?q=30.8717201,75.9044335&z=17&hl=en"
+                    target="_blank"
+                  >
+                    {t("cards.address.cta")}
+                  </Link>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+
+        </div>
+      </div>
+    </section>
+  )
 }

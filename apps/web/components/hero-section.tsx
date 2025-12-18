@@ -1,11 +1,16 @@
+"use client";
+
 import React from 'react'
 import Link from 'next/link'
 import { HeroHeader } from './header'
 import { Button } from '@workspace/ui/components/button'
 import { InfiniteSlider } from '@workspace/ui/components/infinite-slider'
 import { ProgressiveBlur } from '@workspace/ui/components/progressive-blur'
+import { useLocale, useTranslations } from 'next-intl'
 
 export default function HeroSection() {
+  const t = useTranslations("hero");
+  const locale = useLocale();
   return (
     <>
       <HeroHeader />
@@ -32,16 +37,16 @@ export default function HeroSection() {
           <div className="relative z-10 mx-auto max-w-6xl px-6 pt-28 pb-24 md:pt-36 lg:pt-44">
             <div className="max-w-2xl text-center lg:text-left">
               <h1 className="text-balance text-4xl font-medium text-white md:text-4xl xl:text-5xl">
-                Leaders in High-Performance Sportswear Fabrics
+                {t("title")}
               </h1>
 
               <p className="mt-6 max-w-xl text-lg text-white/90">
-                Premium sportswear and activewear fabrics engineered for stretch, durability, and long-term performance, trusted by global apparel brands.
+                {t("description")}
               </p>
 
               <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row lg:justify-start">
                 <Button asChild size="lg" className="px-6">
-                  <Link href="#products">Explore Fabrics</Link>
+                  <Link href={`/${locale}/products`}>{t("cta.explore")}</Link>
                 </Button>
 
                 <Button asChild size="lg" variant="ghost" className="px-6 text-white">
@@ -49,7 +54,7 @@ export default function HeroSection() {
                     target="_blank"
                     href="/adventurous-fabwears-catalogue.pdf"
                   >
-                    View Catalogue
+                    {t("cta.catalogue")}
                   </Link>
                 </Button>
               </div>
@@ -62,7 +67,7 @@ export default function HeroSection() {
           <div className="group relative m-auto max-w-6xl px-6">
             <div className="flex flex-col items-center md:flex-row">
               <div className="md:max-w-44 md:border-r md:pr-6">
-                <p className="text-end text-sm">We work with the best brands</p>
+                <p className="text-end text-sm">{t("brands")}</p>
               </div>
 
               <div className="relative py-6 md:w-[calc(100%-11rem)]">

@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { notFound } from "next/navigation"
+import { getTranslations } from "next-intl/server"
 
 import { getProductBySlug } from "@/lib/products"
 import { Button } from "@workspace/ui/components/button"
@@ -21,7 +22,7 @@ import type { Metadata } from "next"
 
 
 type PageProps = {
-  params: { slug: string }
+  params: { slug: string, locale: string }
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -43,7 +44,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: "website",
       title: product.name,
       description: product.shortDescription,
-      url: `https://adventurousfabwears.co.in/products/${product.slug}`,
+      url: `https://adventurousfabwears.co.in/${resolvedParams.locale}/products/${product.slug}`,
       images: [
         {
           url: imageUrl,
@@ -68,6 +69,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function Page({ params }: PageProps) {
   const resolvedParams = await params
+
+  const t = await getTranslations("products");
   const product = getProductBySlug(resolvedParams.slug)
 
   if (!product) notFound()
@@ -145,84 +148,84 @@ export default async function Page({ params }: PageProps) {
               href={getProductWhatsAppLink(product)}
               target="_blank"
             >
-              Request Best Quote on WhatsApp
+              {t("cta.quote")}
             </a>
           </Button>
 
           {/* Specifications */}
           <div className="border rounded-xl p-6 space-y-4">
             <h3 className="text-lg font-semibold">
-              Fabric Specifications
+              {t("specifications.title")}
             </h3>
 
             <Table>
               <TableBody>
                 <TableRow>
                   <TableCell className="font-medium w-1/3">
-                    Fabric Type
+                    {t("specifications.fabricType")}
                   </TableCell>
                   <TableCell>{product.fabricType}</TableCell>
                 </TableRow>
 
                 <TableRow>
                   <TableCell className="font-medium">
-                    Composition
+                    {t("specifications.composition")}
                   </TableCell>
                   <TableCell>{product.composition}</TableCell>
                 </TableRow>
 
                 <TableRow>
                   <TableCell className="font-medium">
-                    GSM Range
+                    {t("specifications.gsm")}
                   </TableCell>
                   <TableCell>{product.gsm}</TableCell>
                 </TableRow>
 
                 <TableRow>
                   <TableCell className="font-medium">
-                    Width
+                    {t("specifications.width")}
                   </TableCell>
                   <TableCell>{product.width}</TableCell>
                 </TableRow>
 
                 <TableRow>
                   <TableCell className="font-medium">
-                    Stretch
+                    {t("specifications.stretch")}
                   </TableCell>
                   <TableCell>{product.stretch}</TableCell>
                 </TableRow>
 
                 <TableRow>
                   <TableCell className="font-medium">
-                    Texture / Feel
+                    {t("specifications.texture")}
                   </TableCell>
                   <TableCell>{product.texture}</TableCell>
                 </TableRow>
 
                 <TableRow>
                   <TableCell className="font-medium">
-                    Available Colors
+                    {t("specifications.colors")}
                   </TableCell>
                   <TableCell>{product.colors}</TableCell>
                 </TableRow>
 
                 <TableRow>
                   <TableCell className="font-medium">
-                    MOQ
+                    {t("specifications.moq")}
                   </TableCell>
                   <TableCell>{product.moq}</TableCell>
                 </TableRow>
 
                 <TableRow>
                   <TableCell className="font-medium">
-                    Packaging
+                    {t("specifications.packaging")}
                   </TableCell>
                   <TableCell>{product.packaging}</TableCell>
                 </TableRow>
 
                 <TableRow>
                   <TableCell className="font-medium align-top">
-                    Applications
+                    {t("specifications.applications")}
                   </TableCell>
                   <TableCell>
                     <ul className="list-disc list-inside space-y-1">
@@ -239,7 +242,7 @@ export default async function Page({ params }: PageProps) {
           {/* Description */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">
-              Product Description
+              {t("description.title")}
             </h3>
             <p className="text-muted-foreground leading-relaxed">
               {product.longDescription}
