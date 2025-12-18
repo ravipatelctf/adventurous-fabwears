@@ -13,7 +13,7 @@ export default function TestimonialsLayout({
     <>
       <HeroHeader />
 
-      <main className="pt-24 min-h-screen">
+      <main className="pt-10 min-h-screen">
         {children}
       </main>
 

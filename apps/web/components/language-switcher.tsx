@@ -22,7 +22,7 @@ export function LanguageSwitcher() {
   // Future-proof: supports more locales later
   const locales = [
     { code: "en", label: t("english") },
-    { code: "de", label: t("german") },
+    // { code: "de", label: t("german") },
   ]
 
   const handleChange = (nextLocale: string) => {

@@ -9,13 +9,13 @@ export const metadata: Metadata = {
 
 export default function TestimonialsPage() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-12 space-y-6">
-      <h1 className="text-4xl font-bold">What Our Clients Say</h1>
+    <section className="mx-auto max-w-6xl px-6 pb-12 space-y-6">
+      {/* <h1 className="text-4xl font-bold">What Our Clients Say</h1>
 
       <p className="text-muted-foreground max-w-3xl">
         Trusted by manufacturers and brands for quality, consistency, and
         performance-driven fabrics.
-      </p>
+      </p> */}
 
       <TestimonialsSection />
     </section>
