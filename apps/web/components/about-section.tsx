@@ -30,7 +30,7 @@ export default function AboutSection() {
 
                 <p className="mt-6 text-muted-foreground leading-relaxed">
                     {t.rich("leadership", {
-                        name: () => <strong>Mr. Mahinder Singh</strong>
+                        name: (chunks) => <strong>{chunks}</strong>,
                     })}
                 </p>
 
