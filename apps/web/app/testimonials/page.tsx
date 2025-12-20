@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "See what our clients say about Adventurous Fabwears and our premium Lycra® and performance fabrics.",
 }
 
-export default function TestimonialsPage() {
+export default function Page() {
   return (
     <section className="mx-auto max-w-6xl px-6 pb-12 space-y-6">
       {/* <h1 className="text-4xl font-bold">What Our Clients Say</h1>

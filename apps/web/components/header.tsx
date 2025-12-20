@@ -1,119 +1,140 @@
-'use client'
-import Link from 'next/link'
-import { Logo } from '@/components/logo'
-import { Menu, X, Mail, Phone } from 'lucide-react'
-import React from 'react'
-import { Button } from '@workspace/ui/components/button'
-import { LanguageSwitcher } from './language-switcher'
-import { useLocale, useTranslations } from 'next-intl'
+"use client"
 
+import Link from "next/link"
+import React from "react"
+import { Menu, X, Mail, Phone } from "lucide-react"
+
+import { Logo } from "@/components/logo"
+import { Button } from "@workspace/ui/components/button"
 
 export const HeroHeader = () => {
-    const [menuState, setMenuState] = React.useState(false)
-    const [emailHref, setEmailHref] = React.useState<string | null>(null)
+  const [menuState, setMenuState] = React.useState(false)
+  const [emailHref, setEmailHref] = React.useState<string | null>(null)
 
-    const t = useTranslations("nav")
-    const locale = useLocale()
+  const menuItems = [
+    { name: "Home", href: "/" },
+    { name: "Products", href: "/products" },
+    { name: "About", href: "/about" },
+    { name: "Testimonials", href: "/testimonials" },
+    { name: "Contact", href: "/contact" },
+    { name: "FAQs", href: "/faqs" },
+  ]
 
-    const menuItems = [
-        { name: t("home"), href: `/${locale}` },
-        { name: t("products"), href: `/${locale}/products` },
-        { name: t("about"), href: `/${locale}/about` },
-        { name: t("testimonials"), href: `/${locale}/testimonials` },
-        { name: t("contact"), href: `/${locale}/contact` },
-        { name: t("faqs"), href: `/${locale}/faqs` },
-    ]
-
-    React.useEffect(() => {
+  React.useEffect(() => {
     const isMobile =
-        /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+      /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
 
-    setEmailHref(   
-        isMobile
+    setEmailHref(
+      isMobile
         ? "mailto:adventurousfabwears@gmail.com"
         : "https://mail.google.com/mail/?view=cm&fs=1&to=adventurousfabwears@gmail.com"
     )
-    }, [])
+  }, [])
 
-    return (
-        <header>
-            <nav
-                data-state={menuState && 'active'}
-                className="bg-background fixed z-20 w-full border-b backdrop-blur-3xl">
-                <div className="mx-auto max-w-6xl px-6 transition-all duration-300">
-                    <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
-                        <div className="flex w-full items-center justify-between gap-10 lg:w-auto">
-                            <Link
-                                href="/"
-                                aria-label="home"
-                                className="flex items-center space-x-2">
-                                <Logo /><span className=''>Adventurous Fabwears</span>
-                            </Link>
+  return (
+    <header>
+      <nav className="fixed z-20 w-full border-b bg-background backdrop-blur-3xl">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="flex items-center justify-between py-3 lg:py-4">
 
-                            <button
-                                onClick={() => setMenuState(!menuState)}
-                                aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
-                                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
-                                <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                                <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
-                            </button>
+            {/* LOGO */}
+            <Link
+              href="/"
+              aria-label="home"
+              className="flex items-center gap-2 shrink-0"
+            >
+              <Logo />
+              <span className="font-medium">Adventurous Fabwears</span>
+            </Link>
 
-                            <div className="hidden lg:block">
-                                <ul className="flex gap-8 text-sm">
-                                    {menuItems.map((item, index) => (
-                                        <li key={index}>
-                                            <Link
-                                                href={item.href}
-                                                onClick={() => setMenuState(false)}
-                                                className="text-muted-foreground hover:text-accent-foreground block duration-150">
-                                                <span>{item.name}</span>
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
+            {/* DESKTOP: NAV + CTA */}
+            <div className="hidden lg:flex flex-1 items-center justify-between ml-12">
 
-                        <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
-                            <div className="lg:hidden">
-                                <ul className="space-y-6 text-base">
-                                    {menuItems.map((item, index) => (
-                                        <li key={index}>
-                                            <Link
-                                                href={item.href}
-                                                onClick={() => setMenuState(false)}
-                                                className="text-muted-foreground hover:text-accent-foreground block duration-150">
-                                                <span>{item.name}</span>
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                <Button
-                                    asChild
-                                    variant="ghost"
-                                    size="sm">
-                                    <a target="_blank" href="https://wa.me/919988940158?text=Hello%20Adventurous%20Fabwears%20Team%2C%0A%0AI%20am%20interested%20in%20your%20Lycra%C2%AE%2C%20sportswear%2C%20and%20activewear%20fabric%20range.%0APlease%20share%20your%20latest%20fabric%20catalog%2C%20specifications%2C%20MOQ%2C%20and%20pricing%20details.%0A%0ALooking%20forward%20to%20your%20response.%0AThank%20you.">
-                                        <Phone /><span>+91 99889 40158</span>
-                                    </a>
-                                </Button>
-                                <Button asChild variant="ghost" size="sm">
-                                <a
-                                    href={emailHref ?? "#"}
-                                    target={emailHref?.startsWith("http") ? "_blank" : undefined}
-                                    rel="noopener noreferrer"
-                                >
-                                    <Mail />
-                                    <span>EMAIL</span>
-                                </a>
-                                </Button>
-                                <LanguageSwitcher />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-    )
+              {/* NAV LINKS */}
+              <ul className="flex gap-8 text-sm">
+                {menuItems.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="text-muted-foreground hover:text-accent-foreground"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+
+              {/* CTA ACTIONS */}
+              <div className="flex items-center gap-2">
+                <Button asChild variant="ghost" size="sm">
+                  <a
+                    href="https://wa.me/919988940158"
+                    target="_blank"
+                    className="flex items-center gap-2"
+                  >
+                    <Phone className="size-4" />
+                    <span className="hidden xl:inline">
+                      +91 99889 40158
+                    </span>
+                  </a>
+                </Button>
+
+                <Button asChild variant="ghost" size="sm">
+                  <a
+                    href={emailHref ?? "#"}
+                    target={emailHref?.startsWith("http") ? "_blank" : undefined}
+                    rel="noopener noreferrer"
+                  >
+                    <Mail className="size-4" />
+                  </a>
+                </Button>
+              </div>
+            </div>
+
+            {/* MOBILE MENU TOGGLE */}
+            <button
+              onClick={() => setMenuState(!menuState)}
+              className="lg:hidden p-2"
+              aria-label="Toggle menu"
+            >
+              {menuState ? <X /> : <Menu />}
+            </button>
+          </div>
+
+          {/* MOBILE MENU */}
+          {menuState && (
+            <div className="lg:hidden mt-4 rounded-xl border bg-background p-6 shadow-xl space-y-6">
+              <ul className="space-y-4">
+                {menuItems.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      onClick={() => setMenuState(false)}
+                      className="block text-muted-foreground hover:text-accent-foreground"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex gap-2">
+                <Button asChild variant="ghost" size="sm">
+                  <a href="https://wa.me/919988940158" target="_blank">
+                    <Phone />
+                  </a>
+                </Button>
+
+                <Button asChild variant="ghost" size="sm">
+                  <a href={emailHref ?? "#"}>
+                    <Mail />
+                  </a>
+                </Button>
+              </div>
+            </div>
+          )}
+        </div>
+      </nav>
+    </header>
+  )
 }

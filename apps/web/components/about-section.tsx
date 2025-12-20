@@ -1,49 +1,69 @@
-"use client";
+"use client"
 
 import Link from "next/link"
 import { Button } from "@workspace/ui/components/button"
-import { useLocale, useTranslations } from "next-intl";
 
 export default function AboutSection() {
-    const t = useTranslations("about");
-    const locale = useLocale();
+  return (
+    <section id="about" className="bg-background py-16 md:py-24">
+      <div className="mx-auto max-w-3xl px-6 text-center">
+        {/* ------------------------------------------------------------------ */}
+        {/*                               Heading                               */}
+        {/* ------------------------------------------------------------------ */}
 
-    return (
-        <section id="about" className="py-16 md:py-24 bg-background">
-            <div className="mx-auto max-w-3xl px-6 text-center">
+        <h2 className="text-balance text-3xl font-bold md:text-4xl lg:text-5xl">
+          About Us
+        </h2>
 
-                {/* Heading */}
-                <h2 className="text-balance text-3xl font-bold md:text-4xl lg:text-5xl">
-                    {t("title")}
-                </h2>
+        {/* ------------------------------------------------------------------ */}
+        {/*                              Intro Text                             */}
+        {/* ------------------------------------------------------------------ */}
 
-                {/* Text Content */}
-                <p className="mt-8 text-muted-foreground text-lg leading-relaxed">
-                    {t("intro")}
-                </p>
+        <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
+          Adventurous Fabwears is a leading manufacturer and supplier of premium
+          fabrics based in Ludhiana, Punjab, India. Since 2016, we have specialized
+          in garments fabric, knitted fabric, and performance sportswear materials
+          trusted by apparel brands across India.
+        </p>
 
-                <ul className="mt-6 text-muted-foreground space-y-3 leading-relaxed text-left max-w-md mx-auto">
-                    <li><strong>{t("bullets.garments.label")}:</strong> {t("bullets.garments.value")}</li>
-                    <li><strong>{t("bullets.knitted.label")}:</strong> {t("bullets.knitted.value")}</li>
-                    <li><strong>{t("bullets.sportswear.label")}:</strong> {t("bullets.sportswear.value")}</li>
-                </ul>
+        {/* ------------------------------------------------------------------ */}
+        {/*                               Bullet List                           */}
+        {/* ------------------------------------------------------------------ */}
 
-                <p className="mt-6 text-muted-foreground leading-relaxed">
-                    {t.rich("leadership", {
-                        name: (chunks) => <strong>{chunks}</strong>,
-                    })}
-                </p>
+        <ul className="mx-auto mt-6 max-w-md space-y-3 text-left leading-relaxed text-muted-foreground">
+          <li>
+            <strong>Garments Fabric:</strong> Men&apos;s T-shirts, lowers, jackets
+          </li>
+          <li>
+            <strong>Knitted Fabric:</strong> Lycra®, polyester, knitted mesh
+          </li>
+          <li>
+            <strong>Sportswear Fabric:</strong> Moisture-wicking, breathable,
+            quick-dry
+          </li>
+        </ul>
 
-                {/* CTA BUTTON */}
-                <div className="mt-10">
-                    <Button asChild size="lg" className="px-8">
-                        <Link href={`/${locale}/about`}>
-                            {t("cta")}
-                        </Link>
-                    </Button>
-                </div>
+        {/* ------------------------------------------------------------------ */}
+        {/*                            Leadership Text                          */}
+        {/* ------------------------------------------------------------------ */}
 
-            </div>
-        </section>
-    )
+        <p className="mt-6 leading-relaxed text-muted-foreground">
+          Under the guidance of <strong>Mr. Mahinder Singh</strong>, Adventurous
+          Fabwears continues to uphold strong standards of quality, reliability,
+          and customer satisfaction—serving garment manufacturers, exporters, and
+          private-label brands nationwide.
+        </p>
+
+        {/* ------------------------------------------------------------------ */}
+        {/*                                 CTA                                 */}
+        {/* ------------------------------------------------------------------ */}
+
+        <div className="mt-10">
+          <Button asChild size="lg" className="px-8">
+            <Link href="/about">Know More</Link>
+          </Button>
+        </div>
+      </div>
+    </section>
+  )
 }

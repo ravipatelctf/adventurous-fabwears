@@ -12,7 +12,6 @@ import {
 } from "@workspace/ui/components/carousel"
 
 import { products } from "@/lib/products"
-import { useLocale, useTranslations } from "next-intl"
 
 /**
  * Utility: chunk array into groups of 3
@@ -26,46 +25,49 @@ function chunkArray<T>(arr: T[], size: number): T[][] {
 }
 
 /**
- * Landing page: show only first N products
- * (curated / featured)
+ * Landing page: show only first N products (featured)
  */
 const FEATURED_COUNT = 6
 const featuredProducts = products.slice(0, FEATURED_COUNT)
 const slides = chunkArray(featuredProducts, 3)
 
 export default function ProductCatalog() {
-  const t = useTranslations("catalog")
-  const locale = useLocale()  
   return (
-    <section id="products" className="py-16 md:py-24 bg-background">
+    <section id="products" className="bg-background py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
-        {/* Heading */}
-        <h2 className="text-center text-3xl md:text-4xl font-bold">
-          {t("title")}
+        {/* ------------------------------------------------------------------ */}
+        {/*                                Heading                               */}
+        {/* ------------------------------------------------------------------ */}
+
+        <h2 className="text-center text-3xl font-bold md:text-4xl">
+          Our Fabrics Collection
         </h2>
 
-        <p className="text-center mt-4 text-muted-foreground text-lg">
-          {t("description")}
+        <p className="mt-4 text-center text-lg text-muted-foreground">
+          High quality fabrics crafted for garments, sportswear, and global brands.
         </p>
 
-        {/* Carousel */}
-        <div className="mt-12 relative">
+        {/* ------------------------------------------------------------------ */}
+        {/*                                Carousel                              */}
+        {/* ------------------------------------------------------------------ */}
+
+        <div className="relative mt-12">
           <Carousel opts={{ loop: true }} className="w-full">
             <CarouselContent>
               {slides.map((group, index) => (
                 <CarouselItem key={index}>
                   {/* 1 × 3 Row */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
                     {group.map((product) => {
                       const heroMedia = product.media?.[0]
 
                       return (
                         <Link
                           key={product.slug}
-                          href={`${locale}/products/${product.slug}`}
+                          href={`/products/${product.slug}`}
                           className="group relative overflow-hidden rounded-xl border bg-background"
                         >
-                          {/* Image */}
+                          {/* Product Image */}
                           {heroMedia?.type === "image" && (
                             <Image
                               unoptimized
@@ -82,7 +84,7 @@ export default function ProductCatalog() {
 
                           {/* Product Name Badge */}
                           <div className="pointer-events-none absolute bottom-3 left-3 right-3">
-                            <span className="inline-block text-sm font-semibold text-white bg-black/40 backdrop-blur px-4 py-1.5 rounded-full">
+                            <span className="inline-block rounded-full bg-black/40 px-4 py-1.5 text-sm font-semibold text-white backdrop-blur">
                               {product.name}
                             </span>
                           </div>
@@ -94,9 +96,9 @@ export default function ProductCatalog() {
               ))}
             </CarouselContent>
 
-            {/* Arrows */}
-            <CarouselPrevious className="left-2 bg-background border shadow-lg" />
-            <CarouselNext className="right-2 bg-background border shadow-lg" />
+            {/* Carousel Controls */}
+            <CarouselPrevious className="left-2 border bg-background shadow-lg" />
+            <CarouselNext className="right-2 border bg-background shadow-lg" />
           </Carousel>
         </div>
       </div>

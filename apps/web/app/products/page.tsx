@@ -2,11 +2,9 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { products } from "@/lib/products"
-import { useLocale } from "next-intl"
 
 
 export default function Page() {
-  const locale = useLocale();
   return (
     <section className="max-w-7xl mx-auto px-6 py-24">
       {/* Page Header */}
@@ -29,7 +27,7 @@ export default function Page() {
           return (
             <Link
               key={product.slug}
-              href={`/${locale}/products/${product.slug}`}
+              href={`/products/${product.slug}`}
               className="group border rounded-xl overflow-hidden bg-background hover:shadow-xl transition"
             >
               {/* Media Wrapper */}

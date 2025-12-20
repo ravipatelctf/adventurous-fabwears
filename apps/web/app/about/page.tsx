@@ -11,7 +11,7 @@ export default function AboutPage() {
     <section className="mx-auto max-w-5xl px-6 py-12 space-y-6">
       <h1 className="text-4xl font-bold">About Adventurous Fabwears</h1>
 
-      <p className="text-muted-foreground">
+      <p className="">
         Adventurous Fabwears is a leading manufacturer and exporter of
         premium Lycra® and performance fabrics engineered for sportswear,
         activewear, and athleisure applications.

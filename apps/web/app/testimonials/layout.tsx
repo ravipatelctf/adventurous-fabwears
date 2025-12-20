@@ -6,7 +6,7 @@ type TestimonialsLayoutProps = {
   children: ReactNode
 }
 
-export default function TestimonialsLayout({
+export default function Layout({
   children,
 }: TestimonialsLayoutProps) {
   return (
