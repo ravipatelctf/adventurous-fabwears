@@ -18,6 +18,12 @@ export const metadata: Metadata = {
   },
   description:
     "Premium sportswear and activewear fabrics engineered for stretch, durability, and long-term performance.",
+  
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+  },
+  
   openGraph: {
     type: "website",
     siteName: "Adventurous Fabwears",
