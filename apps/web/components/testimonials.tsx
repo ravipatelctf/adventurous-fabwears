@@ -37,7 +37,7 @@ const testimonials: Testimonial[] = [
     location: "Madhubani, Bihar",
     rating: 5,
     quote:
-      "Polyester Lycra fabric has good stretch and recovery. The quality is reliable and works well for activewear and fitted garments.",
+      "Polyester Spandex fabric has good stretch and recovery. The quality is reliable and works well for activewear and fitted garments.",
   },
 ]
 

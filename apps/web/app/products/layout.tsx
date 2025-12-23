@@ -6,7 +6,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Fabric Products",
   description:
-    "Explore Lycra®, knitted, and performance fabrics for sportswear and activewear.",
+    "Explore Sportswear, knitted, and performance fabrics for sportswear and activewear.",
 
   openGraph: {
     title: "Fabric Products | Adventurous Fabwears",

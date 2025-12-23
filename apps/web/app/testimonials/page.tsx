@@ -4,7 +4,7 @@ import TestimonialsSection from "@/components/testimonials"
 export const metadata: Metadata = {
   title: "Testimonials | Adventurous Fabwears",
   description:
-    "See what our clients say about Adventurous Fabwears and our premium Lycra® and performance fabrics.",
+    "See what our clients say about Adventurous Fabwears and our premium Sportswear and performance fabrics.",
 }
 
 export default function Page() {

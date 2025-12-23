@@ -12,7 +12,7 @@ export function getGeneralWhatsAppLink() {
   const message = `
 Hello Adventurous Fabwears Team,
 
-I am interested in your fabric range including Lycra®, sportswear, and activewear materials.
+I am interested in your fabric range including Sportswear, sportswear, and activewear materials.
 
 Please share:
 - Latest fabric catalog

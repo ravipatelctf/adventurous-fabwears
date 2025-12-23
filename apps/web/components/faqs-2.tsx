@@ -13,13 +13,13 @@ const FAQ_ITEMS = [
     key: "export",
     question: "Do you export fabrics internationally?",
     answer:
-      "Yes. We export Lycra®, sportswear, and activewear fabrics worldwide. We ship to over 40+ countries including the USA, Europe, Middle East, and Southeast Asia.",
+      "Yes. We export Sportswear, sportswear, and activewear fabrics worldwide. We ship to over 40+ countries including the USA, Europe, Middle East, and Southeast Asia.",
   },
   {
     key: "specialize",
     question: "What types of fabrics do you specialize in?",
     answer:
-      "We specialize in Lycra® stretch fabrics, sportswear materials, activewear blends, polyester-spandex fabrics, and performance textiles designed for leggings, gym wear, and athleisure.",
+      "We specialize in Sportswear stretch fabrics, sportswear materials, activewear blends, polyester-spandex fabrics, and performance textiles designed for leggings, gym wear, and athleisure.",
   },
   {
     key: "samples",
@@ -66,7 +66,7 @@ export default function FAQsTwo() {
             Frequently Asked Questions
           </h2>
           <p className="mt-4 text-balance text-muted-foreground">
-            Find answers to the most common questions about our Lycra®, sportswear,
+            Find answers to the most common questions about our Sportswear, sportswear,
             and activewear fabric exports.
           </p>
         </div>

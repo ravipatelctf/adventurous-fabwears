@@ -35,7 +35,7 @@ export default function AboutSection() {
             <strong>Garments Fabric:</strong> Men&apos;s T-shirts, lowers, jackets
           </li>
           <li>
-            <strong>Knitted Fabric:</strong> Lycra®, polyester, knitted mesh
+            <strong>Knitted Fabric:</strong> Polyester, spandex, knitted mesh
           </li>
           <li>
             <strong>Sportswear Fabric:</strong> Moisture-wicking, breathable,
