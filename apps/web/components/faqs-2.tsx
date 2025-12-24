@@ -13,7 +13,7 @@ const FAQ_ITEMS = [
     key: "export",
     question: "Do you export fabrics internationally?",
     answer:
-      "Yes. We export Sportswear, sportswear, and activewear fabrics worldwide. We ship to over 40+ countries including the USA, Europe, Middle East, and Southeast Asia.",
+      "Yes. We export sportswear, and activewear fabrics worldwide. We ship to over 40+ countries including the USA, Europe, Middle East, and Southeast Asia.",
   },
   {
     key: "specialize",
