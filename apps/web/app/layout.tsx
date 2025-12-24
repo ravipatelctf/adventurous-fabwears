@@ -4,7 +4,6 @@ import type { Metadata } from "next"
 
 import "@workspace/ui/globals.css"
 import { Providers } from "@/components/providers"
-import { GAPageView } from "@/components/ga-page-view"
 
 /* -------------------------------------------------------------------------- */
 /*                                  Metadata                                  */
@@ -85,7 +84,6 @@ export default function Layout({
       <body className="font-sans antialiased">
         <Providers>
           <Suspense fallback={null}>
-            <GAPageView />
               {/* Google Tag Manager (noscript) */}
               <noscript>
                 <iframe
