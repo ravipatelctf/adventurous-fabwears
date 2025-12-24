@@ -82,12 +82,12 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <section className="mx-auto max-w-6xl px-6 py-24">
-      <div className="grid grid-cols-1 items-start gap-14 md:grid-cols-2">
+      <div className="grid grid-cols-1 items-start gap-14 md:grid-cols-5">
         {/* ------------------------------------------------------------------ */}
         {/*                           MEDIA CAROUSEL                            */}
         {/* ------------------------------------------------------------------ */}
 
-        <div className="space-y-4">
+        <div className="space-y-4 col-span-3">
           <Carousel opts={{ loop: true }} className="w-full">
             <CarouselContent>
               {product.media.map((item, index) => (
@@ -123,7 +123,7 @@ export default async function Page({ params }: PageProps) {
         {/*                           PRODUCT CONTENT                           */}
         {/* ------------------------------------------------------------------ */}
 
-        <div className="space-y-8">
+        <div className="space-y-8 col-span-2">
           {/* Title */}
           <div className="space-y-2">
             <h1 className="text-3xl font-bold md:text-4xl">
