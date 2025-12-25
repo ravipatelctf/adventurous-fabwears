@@ -18,6 +18,7 @@ export const HeroHeader = () => {
     { name: "Testimonials", href: "/testimonials" },
     { name: "Contact", href: "/contact" },
     { name: "FAQs", href: "/faqs" },
+    { name: "Certificates", href: "/certificates" },
   ]
 
   React.useEffect(() => {

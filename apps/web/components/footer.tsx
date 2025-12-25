@@ -11,6 +11,7 @@ export default function FooterSection() {
     { name: "Testimonials", href: "/testimonials" },
     { name: "Contact", href: "/contact" },
     { name: "FAQs", href: "/faqs" },
+    { name: "Certificates", href: "/certificates" },
   ]
 
   return (

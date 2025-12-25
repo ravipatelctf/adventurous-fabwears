@@ -9,7 +9,8 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <section className="mx-auto max-w-5xl px-6 py-12 space-y-6">
-      <h1 className="text-4xl font-bold">About Adventurous Fabwears</h1>
+      <h1 className="text-4xl font-bold text-center">About Adventurous Fabwears</h1>
+      <hr />
 
       <p className="">
         Adventurous Fabwears is a leading manufacturer and exporter of
