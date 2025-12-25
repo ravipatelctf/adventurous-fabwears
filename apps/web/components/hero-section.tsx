@@ -109,6 +109,13 @@ export default function HeroSection() {
                       alt="Athletic Sportswear"
                     />
                   </div>
+                  <div>
+                    <img
+                      className="mx-auto h-14 w-fit"
+                      src="/logo-chandramukhi.png"
+                      alt="Chandramukhi Impex Limited"
+                    />
+                  </div>
                 </InfiniteSlider>
 
                 {/* Edge fades */}
