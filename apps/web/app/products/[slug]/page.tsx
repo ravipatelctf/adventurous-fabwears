@@ -125,20 +125,23 @@ export default async function Page({ params }: PageProps) {
                 {product.media.map(
                   (item, index) =>
                     item.type === "video" && (
-                      <CarouselItem key={index}>
+                    <CarouselItem key={index}>
+                      <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-black">
                         <Video
                           src={item.src}
                           controls
-                          preload="true"
                           muted
                           autoPlay
-                          className="w-full rounded-xl object-cover"
+                          preload="none" // IMPORTANT: prevents auto download
+                          poster={`${item.src}/ik-thumbnail.jpg`}
+                          className="absolute inset-0 h-full w-full object-cover"
                           transformation={[
-                            { width: 1280 },
+                            { width: 1920, height: 1080 },
                             { format: "mp4" },
                           ]}
                         />
-                      </CarouselItem>
+                      </div>
+                    </CarouselItem>
                     )
                 )}
               </CarouselContent>
