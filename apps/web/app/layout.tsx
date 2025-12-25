@@ -4,6 +4,7 @@ import type { Metadata } from "next"
 
 import "@workspace/ui/globals.css"
 import { Providers } from "@/components/providers"
+import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 
 /* -------------------------------------------------------------------------- */
 /*                                  Metadata                                  */
@@ -95,6 +96,7 @@ export default function Layout({
               </noscript>
           </Suspense>
           {children}
+          <FloatingWhatsApp />
         </Providers>
       </body>
     </html>
