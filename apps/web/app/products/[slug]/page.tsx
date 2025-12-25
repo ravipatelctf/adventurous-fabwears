@@ -90,9 +90,8 @@ export default async function Page({ params }: PageProps) {
         <div className="space-y-4 col-span-3">
           <Carousel opts={{ loop: true }} className="w-full">
             <CarouselContent>
-              {product.media.map((item, index) => (
+              {product.media.map((item, index) => item.type === "image" && (
                 <CarouselItem key={index}>
-                  {item.type === "image" ? (
                     <Image
                       src={item.src}
                       alt={item.alt}
@@ -101,15 +100,25 @@ export default async function Page({ params }: PageProps) {
                       unoptimized
                       className="h-[420px] w-full rounded-xl object-cover"
                     />
-                  ) : (
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+
+            <CarouselPrevious className="absolute left-3 top-1/2 z-20 -translate-y-1/2 border-none bg-black/60 text-white" />
+            <CarouselNext className="absolute right-3 top-1/2 z-20 -translate-y-1/2 border-none bg-black/60 text-white" />
+          </Carousel>
+
+          <Carousel opts={{ loop: true }} className="w-full">
+            <CarouselContent>
+              {product.media.map((item, index) => item.type === "video" && (
+                <CarouselItem key={index}>
                     <video
                       src={item.src}
                       controls
                       muted
                       autoPlay
-                      className="h-[420px] w-full rounded-xl object-cover"
+                      className="w-full rounded-xl object-cover"
                     />
-                  )}
                 </CarouselItem>
               ))}
             </CarouselContent>

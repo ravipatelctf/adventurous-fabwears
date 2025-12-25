@@ -1,7 +1,9 @@
 // apps/web/lib/products.ts
 
+type mediaProps = "image" | "video";
+
 export type ProductMedia =
-  | { type: "image"; src: string; alt: string }
+  | { type: mediaProps; src: string; alt: string }
 
 export type Product = {
   slug: string
@@ -83,6 +85,8 @@ export const products: Product[] = [
       { type: "image", src: "/products/jacquard-lycra/WhatsApp Image 2025-12-23 at 3.30.47 PM (2).jpeg", alt: "Jacquard Lycra WhatsApp image" },
       { type: "image", src: "/products/jacquard-lycra/jacquard-lycra-img1.jpg", alt: "Jacquard Lycra pattern" },
       { type: "image", src: "/products/jacquard-lycra/jacquard-lycra-img2.jpg", alt: "Jacquard Lycra texture" },
+      { type: "video", src: "/products/jacquard-lycra/jacquard-lycra-video1.mp4", alt: "jacquard-lycra-video1" },
+      { type: "video", src: "/products/jacquard-lycra/jacquard-lycra-video2.mp4", alt: "jacquard-lycra-video2" },
     ],
     shortDescription: "Premium patterned Lycra fabric.",
     longDescription: "Jacquard Lycra combines texture with stretch.",
