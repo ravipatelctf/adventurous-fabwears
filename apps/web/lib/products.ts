@@ -57,7 +57,7 @@ export const products: Product[] = [
     fabricType: "Knitted",
     media: [
       { type: "image", src: "https://ik.imagekit.io/l4zqjdpiax/public/products/interlock-lycra/interlock-lycra-fabric-image-1.jpeg", alt: "Interlock Lycra Fabric Image 1" },
-      { type: "video", src: "https://ik.imagekit.io/l4zqjdpiax/public/products/interlock-lycra/interlock-lycra-fabric-video-1.mp4", alt: "Interlock Lycra Fabric Video 1" },
+      { type: "video", src: "https://ik.imagekit.io/l4zqjdpiax/public/videos/hero-video-1.mp4", alt: "placeholder video" },
     ],
     shortDescription: "Dense interlock Lycra with structure.",
     longDescription: "Interlock Lycra provides opacity and stretch recovery.",
@@ -78,7 +78,7 @@ export const products: Product[] = [
     fabricType: "Knitted",
     media: [
       { type: "image", src: "https://ik.imagekit.io/l4zqjdpiax/public/products/jacquard-lycra/jacquard-lycra-fabric-image-1.jpeg", alt: "Jacquard Lycra Fabric Image 1" },
-      { type: "video", src: "https://ik.imagekit.io/l4zqjdpiax/public/products/jacquard-lycra/jacquard-lycra-fabric-video-1.mp4", alt: "Jacquard Lycra Fabric Video 1" },
+      { type: "video", src: "https://ik.imagekit.io/l4zqjdpiax/public/videos/hero-video-1.mp4", alt: "placeholder video" },
     ],
     shortDescription: "Premium patterned Lycra fabric.",
     longDescription: "Jacquard Lycra combines texture with stretch.",
@@ -121,7 +121,7 @@ export const products: Product[] = [
     fabricType: "Knitted",
     media: [
       { type: "image", src: "https://ik.imagekit.io/l4zqjdpiax/public/products/nylon-lycra/nylon-lycra-fabric-image-1.jpeg", alt: "Nylon Lycra Fabric Image 1" },
-      { type: "video", src: "https://ik.imagekit.io/l4zqjdpiax/public/products/nylon-lycra/nylon-lycra-fabric-video-1.mp4", alt: "Nylon Lycra Fabric Video 1" },
+      { type: "video", src: "https://ik.imagekit.io/l4zqjdpiax/public/videos/hero-video-1.mp4", alt: "placeholder video" },
     ],
     shortDescription: "High-performance Nylon Lycra.",
     longDescription: "Used for swimwear and compression garments.",
@@ -209,7 +209,7 @@ export const products: Product[] = [
     fabricType: "Knitted",
     media: [
       { type: "image", src: "https://ik.imagekit.io/l4zqjdpiax/public/products/fleece-fabric/fleece-fabric-image-1.jpeg", alt: "Fleece Fabric Image 1" },
-      { type: "video", src: "https://ik.imagekit.io/l4zqjdpiax/public/products/fleece-fabric/fleece-fabric-video-1.mp4", alt: "Fleece Fabric Video 1" },
+      { type: "video", src: "https://ik.imagekit.io/l4zqjdpiax/public/videos/hero-video-1.mp4", alt: "placeholder video" },
     ],
     shortDescription: "Warm fleece fabric.",
     longDescription: "Used for winter garments.",
