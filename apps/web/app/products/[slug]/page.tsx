@@ -1,4 +1,5 @@
-import Image from "next/image"
+// import Image from "next/image"
+import { Image, Video, ImageKitProvider } from "@imagekit/next"
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 
@@ -88,44 +89,64 @@ export default async function Page({ params }: PageProps) {
         {/* ------------------------------------------------------------------ */}
 
         <div className="space-y-4 col-span-3">
-          <Carousel opts={{ loop: true }} className="w-full">
-            <CarouselContent>
-              {product.media.map((item, index) => item.type === "image" && (
-                <CarouselItem key={index}>
-                    <Image
-                      src={item.src}
-                      alt={item.alt}
-                      width={700}
-                      height={700}
-                      unoptimized
-                      className="h-[420px] w-full rounded-xl object-cover"
-                    />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
+          <ImageKitProvider
+            urlEndpoint={process.env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT!}
+          >
+            {/* Images */}
+            <Carousel opts={{ loop: true }} className="w-full">
+              <CarouselContent>
+                {product.media.map(
+                  (item, index) =>
+                    item.type === "image" && (
+                      <CarouselItem key={index}>
+                        <Image
+                          src={item.src} // relative path works perfectly
+                          alt={item.alt}
+                          width={700}
+                          height={420}
+                          className="h-[420px] w-full rounded-xl object-cover"
+                          transformation={[
+                            { width: 1400 }, // retina-quality
+                            { quality: 80 },
+                          ]}
+                        />
+                      </CarouselItem>
+                    )
+                )}
+              </CarouselContent>
 
-            <CarouselPrevious className="absolute left-3 top-1/2 z-20 -translate-y-1/2 border-none bg-black/60 text-white" />
-            <CarouselNext className="absolute right-3 top-1/2 z-20 -translate-y-1/2 border-none bg-black/60 text-white" />
-          </Carousel>
+              <CarouselPrevious className="absolute left-3 top-1/2 z-20 -translate-y-1/2 border-none bg-black/60 text-white" />
+              <CarouselNext className="absolute right-3 top-1/2 z-20 -translate-y-1/2 border-none bg-black/60 text-white" />
+            </Carousel>
 
-          <Carousel opts={{ loop: true }} className="w-full">
-            <CarouselContent>
-              {product.media.map((item, index) => item.type === "video" && (
-                <CarouselItem key={index}>
-                    <video
-                      src={item.src}
-                      controls
-                      muted
-                      autoPlay
-                      className="w-full rounded-xl object-cover"
-                    />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
+            {/* Videos */}
+            <Carousel opts={{ loop: true }} className="w-full">
+              <CarouselContent>
+                {product.media.map(
+                  (item, index) =>
+                    item.type === "video" && (
+                      <CarouselItem key={index}>
+                        <Video
+                          src={item.src}
+                          controls
+                          preload="true"
+                          muted
+                          autoPlay
+                          className="w-full rounded-xl object-cover"
+                          transformation={[
+                            { width: 1280 },
+                            { format: "mp4" },
+                          ]}
+                        />
+                      </CarouselItem>
+                    )
+                )}
+              </CarouselContent>
 
-            <CarouselPrevious className="absolute left-3 top-1/2 z-20 -translate-y-1/2 border-none bg-black/60 text-white" />
-            <CarouselNext className="absolute right-3 top-1/2 z-20 -translate-y-1/2 border-none bg-black/60 text-white" />
-          </Carousel>
+              <CarouselPrevious className="absolute left-3 top-1/2 z-20 -translate-y-1/2 border-none bg-black/60 text-white" />
+              <CarouselNext className="absolute right-3 top-1/2 z-20 -translate-y-1/2 border-none bg-black/60 text-white" />
+            </Carousel>
+          </ImageKitProvider>
         </div>
 
         {/* ------------------------------------------------------------------ */}
