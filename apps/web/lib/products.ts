@@ -7,6 +7,7 @@ export type ProductMedia =
 
 export type Product = {
   slug: string
+  category: string
   name: string
   fabricType: string
   media: ProductMedia[]
@@ -32,6 +33,7 @@ export const products: Product[] = [
 
   {
     slug: "single-jersey-lycra",
+    category: "knitted",
     name: "Single Jersey Lycra Fabric",
     fabricType: "Knitted",
     media: [
@@ -53,6 +55,7 @@ export const products: Product[] = [
 
   {
     slug: "interlock-lycra",
+    category: "knitted",
     name: "Interlock Lycra Fabric",
     fabricType: "Knitted",
     media: [
@@ -74,6 +77,7 @@ export const products: Product[] = [
 
   {
     slug: "jacquard-lycra",
+    category: "knitted",
     name: "Jacquard Lycra Fabric",
     fabricType: "Knitted",
     media: [
@@ -95,6 +99,7 @@ export const products: Product[] = [
 
   {
     slug: "micro-peach-lycra",
+    category: "knitted",
     name: "Micro Peach Lycra Fabric",
     fabricType: "Knitted",
     media: [
@@ -117,6 +122,7 @@ export const products: Product[] = [
 
   {
     slug: "nylon-lycra",
+    category: "knitted",
     name: "Nylon Lycra Fabric",
     fabricType: "Knitted",
     media: [
@@ -140,6 +146,7 @@ export const products: Product[] = [
 
   {
     slug: "dot-knit",
+    category: "knitted",
     name: "Dot Knit Fabric",
     fabricType: "Knitted",
     media: [
@@ -161,6 +168,7 @@ export const products: Product[] = [
 
   {
     slug: "rice-knit",
+    category: "knitted",
     name: "Rice Knit Fabric",
     fabricType: "Knitted",
     media: [
@@ -182,6 +190,7 @@ export const products: Product[] = [
 
   {
     slug: "cotton-sinker",
+    category: "knitted",
     name: "Cotton Sinker Fabric",
     fabricType: "Knitted",
     media: [
@@ -205,6 +214,7 @@ export const products: Product[] = [
 
   {
     slug: "fleece-fabric",
+    category: "woven",
     name: "Fleece Fabric",
     fabricType: "Knitted",
     media: [

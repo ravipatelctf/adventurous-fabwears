@@ -13,6 +13,7 @@ export const HeroHeader = () => {
 
   const menuItems = [
     { name: "Home", href: "/" },
+    { name: "Categories", href: "/categories" },
     { name: "Products", href: "/products" },
     { name: "About", href: "/about" },
     { name: "Testimonials", href: "/testimonials" },
