@@ -12,6 +12,8 @@ export default function FooterSection() {
     { name: "Contact", href: "/contact" },
     { name: "FAQs", href: "/faqs" },
     { name: "Certificates", href: "/certificates" },
+    { name: "Robots.txt", href: "/robots.txt" },
+    { name: "Sitemap.xml", href: "/sitemap.xml" },
   ]
 
   return (
