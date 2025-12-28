@@ -120,7 +120,7 @@ export default async function Page({ params }: PageProps) {
             </Carousel>
 
             {/* Videos */}
-            <Carousel opts={{ loop: true }} className="w-full">
+            {/* <Carousel opts={{ loop: true }} className="w-full">
               <CarouselContent>
                 {product.media.map(
                   (item, index) =>
@@ -148,7 +148,7 @@ export default async function Page({ params }: PageProps) {
 
               <CarouselPrevious className="absolute left-3 top-1/2 z-20 -translate-y-1/2 border-none bg-black/60 text-white" />
               <CarouselNext className="absolute right-3 top-1/2 z-20 -translate-y-1/2 border-none bg-black/60 text-white" />
-            </Carousel>
+            </Carousel> */}
           </ImageKitProvider>
         </div>
 
