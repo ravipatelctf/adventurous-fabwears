@@ -83,6 +83,29 @@ export default function HeroSection() {
 
               <div className="relative py-6 md:w-[calc(100%-11rem)]">
                 <InfiniteSlider speedOnHover={20} speed={40} gap={112}>
+                  <div>
+                    <img
+                      className="mx-auto h-14 w-fit"
+                      src="/logo-vakiria.png"
+                      alt="Vakiria Private Limited"
+                    />
+                  </div>
+
+                  <div>
+                    <img
+                      className="mx-auto h-14 w-fit"
+                      src="/athelete-sportswear-logo.avif"
+                      alt="Athletic Sportswear"
+                    />
+                  </div>
+                  <div>
+                    <img
+                      className="mx-auto h-14 w-fit"
+                      src="/logo-chandramukhi.png"
+                      alt="Chandramukhi Impex Limited"
+                    />
+                  </div>
+                  
                   {[
                     "lycra.com",
                     "www.directalpine.com",
@@ -101,21 +124,6 @@ export default function HeroSection() {
                       />
                     </div>
                   ))}
-
-                  <div>
-                    <img
-                      className="mx-auto h-14 w-fit"
-                      src="/athelete-sportswear-logo.avif"
-                      alt="Athletic Sportswear"
-                    />
-                  </div>
-                  <div>
-                    <img
-                      className="mx-auto h-14 w-fit"
-                      src="/logo-chandramukhi.png"
-                      alt="Chandramukhi Impex Limited"
-                    />
-                  </div>
                 </InfiniteSlider>
 
                 {/* Edge fades */}
