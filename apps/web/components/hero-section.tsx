@@ -86,14 +86,6 @@ export default function HeroSection() {
                   <div>
                     <img
                       className="mx-auto h-14 w-fit"
-                      src="/logo-vakiria.png"
-                      alt="Vakiria Private Limited"
-                    />
-                  </div>
-
-                  <div>
-                    <img
-                      className="mx-auto h-14 w-fit"
                       src="/athelete-sportswear-logo.avif"
                       alt="Athletic Sportswear"
                     />
@@ -103,6 +95,13 @@ export default function HeroSection() {
                       className="mx-auto h-14 w-fit"
                       src="/logo-chandramukhi.png"
                       alt="Chandramukhi Impex Limited"
+                    />
+                  </div>
+                  <div>
+                    <img
+                      className="mx-auto h-14 w-fit"
+                      src="/logo-vakiria.png"
+                      alt="Vakiria Private Limited"
                     />
                   </div>
                   
