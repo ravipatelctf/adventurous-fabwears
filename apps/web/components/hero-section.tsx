@@ -104,25 +104,6 @@ export default function HeroSection() {
                       alt="Vakiria Private Limited"
                     />
                   </div>
-                  
-                  {[
-                    "lycra.com",
-                    "www.directalpine.com",
-                    "vuoriclothing.com",
-                    "www.thrudark.com",
-                    "www.aritzia.com",
-                    "satisfyrunning.com",
-                    "obermeyer.com",
-                    "forloh.com",
-                  ].map((site) => (
-                    <div key={site} className="flex">
-                      <img
-                        className="mx-auto h-14 w-fit"
-                        src={`https://cdn.brandfetch.io/${site}`}
-                        alt={site}
-                      />
-                    </div>
-                  ))}
                 </InfiniteSlider>
 
                 {/* Edge fades */}
