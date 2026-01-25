@@ -1,5 +1,4 @@
-// import Image from "next/image"
-import { Image, Video, ImageKitProvider } from "@imagekit/next"
+import Image from "next/image"
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 
@@ -33,14 +32,12 @@ type PageProps = {
 export async function generateMetadata(
   { params }: PageProps
 ): Promise<Metadata> {
-  const resolvedParams = await params;
+  const resolvedParams = await params
   const product = getProductBySlug(resolvedParams.slug)
   if (!product) return {}
 
-  const imagePath =
+  const imageUrl =
     product.media.find((m) => m.type === "image")?.src ?? "/og-af.png"
-
-  const imageUrl = `https://adventurousfabwears.co.in${imagePath}`
 
   return {
     title: product.name,
@@ -76,7 +73,7 @@ export async function generateMetadata(
 /* -------------------------------------------------------------------------- */
 
 export default async function Page({ params }: PageProps) {
-  const resolvedParams = await params;
+  const resolvedParams = await params
   const product = getProductBySlug(resolvedParams.slug)
 
   if (!product) notFound()
@@ -84,79 +81,42 @@ export default async function Page({ params }: PageProps) {
   return (
     <section className="mx-auto max-w-6xl px-6 py-24">
       <div className="grid grid-cols-1 items-start gap-14 md:grid-cols-5">
+
         {/* ------------------------------------------------------------------ */}
         {/*                           MEDIA CAROUSEL                            */}
         {/* ------------------------------------------------------------------ */}
 
-        <div className="space-y-4 col-span-3">
-          <ImageKitProvider
-            urlEndpoint={process.env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT!}
-          >
-            {/* Images */}
-            <Carousel opts={{ loop: true }} className="w-full">
-              <CarouselContent>
-                {product.media.map(
-                  (item, index) =>
-                    item.type === "image" && (
-                      <CarouselItem key={index}>
-                        <Image
-                          src={item.src} // relative path works perfectly
-                          alt={item.alt}
-                          width={700}
-                          height={420}
-                          className="h-[420px] w-full rounded-xl object-cover"
-                          transformation={[
-                            { width: 1400 }, // retina-quality
-                            { quality: 80 },
-                          ]}
-                        />
-                      </CarouselItem>
-                    )
-                )}
-              </CarouselContent>
+        <div className="col-span-3 space-y-4">
+          <Carousel opts={{ loop: true }} className="w-full">
+            <CarouselContent>
+              {product.media.map((item, index) => (
+                <CarouselItem key={index}>
+                  <div className="mx-auto w-full max-w-[520px]">
+                    <div className="relative aspect-square w-full overflow-hidden rounded-xl">
+                      <Image
+                        src={item.src}
+                        alt={item.alt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 520px"
+                        className="object-cover"
+                        priority={index === 0}
+                      />
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
 
-              <CarouselPrevious className="absolute left-3 top-1/2 z-20 -translate-y-1/2 border-none bg-black/60 text-white" />
-              <CarouselNext className="absolute right-3 top-1/2 z-20 -translate-y-1/2 border-none bg-black/60 text-white" />
-            </Carousel>
-
-            {/* Videos */}
-            {/* <Carousel opts={{ loop: true }} className="w-full">
-              <CarouselContent>
-                {product.media.map(
-                  (item, index) =>
-                    item.type === "video" && (
-                    <CarouselItem key={index}>
-                      <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-black">
-                        <Video
-                          src={item.src}
-                          controls
-                          muted
-                          autoPlay
-                          preload="none" // IMPORTANT: prevents auto download
-                          poster={`${item.src}/ik-thumbnail.jpg`}
-                          className="absolute inset-0 h-full w-full object-cover"
-                          transformation={[
-                            { width: 1920, height: 1080 },
-                            { format: "mp4" },
-                          ]}
-                        />
-                      </div>
-                    </CarouselItem>
-                    )
-                )}
-              </CarouselContent>
-
-              <CarouselPrevious className="absolute left-3 top-1/2 z-20 -translate-y-1/2 border-none bg-black/60 text-white" />
-              <CarouselNext className="absolute right-3 top-1/2 z-20 -translate-y-1/2 border-none bg-black/60 text-white" />
-            </Carousel> */}
-          </ImageKitProvider>
+            <CarouselPrevious className="absolute left-3 top-1/2 z-20 -translate-y-1/2 border-none bg-black/60 text-white" />
+            <CarouselNext className="absolute right-3 top-1/2 z-20 -translate-y-1/2 border-none bg-black/60 text-white" />
+          </Carousel>
         </div>
 
         {/* ------------------------------------------------------------------ */}
         {/*                           PRODUCT CONTENT                           */}
         {/* ------------------------------------------------------------------ */}
 
-        <div className="space-y-8 col-span-2">
+        <div className="col-span-2 space-y-8">
           {/* Title */}
           <div className="space-y-2">
             <h1 className="text-3xl font-bold md:text-4xl">

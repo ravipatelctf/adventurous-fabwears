@@ -67,17 +67,23 @@ export default function ProductCatalog() {
                           href={`/products/${product.slug}`}
                           className="group relative overflow-hidden rounded-xl border bg-background"
                         >
-                          {/* Product Image */}
-                          {heroMedia?.type === "image" && (
+                          
+                        {/* Product Image */}
+                        {heroMedia?.type === "image" && (
+                          <div className="relative aspect-square w-full overflow-hidden">
                             <Image
-                              unoptimized
                               src={heroMedia.src}
                               alt={heroMedia.alt}
-                              width={500}
-                              height={500}
-                              className="h-56 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                              fill
+                              sizes="
+                                (max-width: 640px) 100vw,
+                                (max-width: 1024px) 33vw,
+                                300px
+                              "
+                              className="object-cover transition-transform duration-300 group-hover:scale-105"
                             />
-                          )}
+                          </div>
+                        )}
 
                           {/* Bottom Gradient */}
                           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/70 to-transparent" />

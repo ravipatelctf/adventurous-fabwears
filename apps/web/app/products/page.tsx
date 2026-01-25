@@ -31,15 +31,19 @@ export default function Page() {
               className="group border rounded-xl overflow-hidden bg-background hover:shadow-xl transition"
             >
               {/* Media Wrapper */}
-              <div className="relative overflow-hidden">
+              <div className="relative aspect-square w-full overflow-hidden">
                 {heroMedia?.type === "image" ? (
                   <Image
                     src={heroMedia.src}
                     alt={heroMedia.alt}
-                    width={500}
-                    height={500}
-                    className="object-cover w-full h-64 transition-transform duration-300 group-hover:scale-105"
-                    unoptimized
+                    fill
+                    sizes="
+                      (max-width: 640px) 100vw,
+                      (max-width: 1024px) 50vw,
+                      33vw
+                    "
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    priority={false}
                   />
                 ) : (
                   <video
@@ -47,7 +51,7 @@ export default function Page() {
                     muted
                     loop
                     playsInline
-                    className="object-cover w-full h-64"
+                    className="absolute inset-0 h-full w-full object-cover"
                   />
                 )}
 
