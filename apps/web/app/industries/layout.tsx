@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "Explore the industries we serve as a leading fabric manufacturer and exporter in India, supplying sportswear, activewear, performance, and technical fabrics.",
 }
 
-export default function IndustriesLayout({
+export default function Layout({
   children,
 }: {
   children: React.ReactNode
