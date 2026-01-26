@@ -4,7 +4,7 @@ import type { Product } from "@/lib/products"
 
 const WHATSAPP_NUMBER = "919988940158"
 
-function createWhatsAppLink(message: string) {
+export function createWhatsAppLink(message: string) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
 }
 
