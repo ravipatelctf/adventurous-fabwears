@@ -31,6 +31,39 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
+  const industryRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/industries/sportswear-fabric-manufacturer-india`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/industries/activewear-fabric-exporter-india`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/industries/polyester-spandex-fabric-supplier`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/industries/rice-knit-fabric-manufacturer`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/industries/fleece-fabric-manufacturer-india`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+  ]
+
   const productRoutes: MetadataRoute.Sitemap = products.map((product) => ({
     url: `${BASE_URL}/products/${product.slug}`,
     lastModified: new Date(),
@@ -38,5 +71,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  return [...staticRoutes, ...productRoutes]
+  return [...staticRoutes, ...industryRoutes, ...productRoutes]
 }
